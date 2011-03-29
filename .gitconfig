@@ -1,0 +1,7 @@
+[user]
+	email = scott@oharagroup.net
+	name = Scott O'Hara
+[core]
+	editor = kate
+[merge]
+	tool = kdiff3
