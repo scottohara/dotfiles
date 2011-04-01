@@ -1,3 +1,6 @@
-[submodule ".vim"]
-	path = .vim
+[submodule "vimplugins/xmledit"]
+	path = vimplugins/xmledit
+	url = git://github.com/sukima/xmledit.git
+[submodule "vimplugins/surround"]
+	path = vimplugins/surround
 	url = git://github.com/tpope/vim-surround.git
