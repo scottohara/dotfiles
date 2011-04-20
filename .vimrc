@@ -27,7 +27,7 @@ set ignorecase
 set smartcase
 
 " Whitespace
-set list listchars=tab:\ \ ,trail:.
+set list listchars=tab:▸\ ,trail:.,eol:¬
 
 " Status bar
 set laststatus=2
@@ -53,7 +53,9 @@ if !exists(":DiffOrig")
 endif
 
 " Color scheme
-colorscheme desert256
+"colorscheme desert256
+set background=dark
+colorscheme solarized
 
 " Line numbers
 set number
@@ -70,3 +72,9 @@ let mapleader=","
 
 " NERDTree stuff
 map <Leader>n :NERDTreeToggle<CR>
+
+" Enable filetype plugins
+filetype plugin on
+
+" Toggle invisibles
+nmap <leader>l :set list!<CR>

@@ -4,3 +4,6 @@
 [submodule "vimplugins/surround"]
 	path = vimplugins/surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vimplugins/vim-colors-solarized"]
+	path = vimplugins/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized
