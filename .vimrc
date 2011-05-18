@@ -1,3 +1,18 @@
+"----------------------------------------------------------------------
+" Mappings (leader = ,)
+" =====================
+" Key	Description																							Mode
+" ---	-----------																							----
+" n		Toggles NERDTree open/closed													|	All
+" l		Toggles invisible characters (line breaks, tabs etc.)	|	Normal
+" ew	Edit file in directory of current file, in new window	|	All
+" es	Edit file in directory of current file, in new split	|	All
+" ev	Edit file in directory of current file, in new vsplit	|	All
+" et	Edit file in directory of current file, in new tab		| All
+" s		Toggles spell checking on/off													| Normal
+" v		Edit .vimrc file in a new vsplit											| Normal
+"----------------------------------------------------------------------
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -25,6 +40,7 @@ set wildmenu
 set showmatch
 set ignorecase
 set smartcase
+set hidden		" allow easy switching from a modified buffer
 
 " Whitespace
 set list listchars=tab:▸\ ,trail:.,eol:¬
@@ -78,3 +94,32 @@ filetype plugin on
 
 " Toggle invisibles
 nmap <leader>l :set list!<CR>
+
+" Edit file shortcuts
+cnoremap %% <C-R>=expand('%:h').'/'<CR>
+" edit a file from the same directory as the current file, in the current window
+map <leader>ew :e %%
+" as above, in a new window split
+map <leader>es :sp %%
+" as above, in a new vertical split"
+map <leader>ev :vsp %%
+" as above, in a new tab"
+map <leader>et :tabe %%
+
+" Toggle spell checking
+nmap <silent> <leader>s :set spell!<CR>
+set spelllang=en_au
+
+" Editing and reloading this file
+if has("autocmd")
+	autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+nmap <leader>v :vsp $MYVIMRC<CR>
+
+" Bubble single lines
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
