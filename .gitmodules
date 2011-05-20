@@ -10,3 +10,6 @@
 [submodule "vimplugins/gundo"]
 	path = vimplugins/gundo
 	url = git://github.com/sjl/gundo.vim.git
+[submodule "vimplugins/fugitive"]
+	path = vimplugins/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
