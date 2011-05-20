@@ -5,3 +5,7 @@
 	editor = kate
 [merge]
 	tool = kdiff3
+[alias]
+	co = checkout
+	br = branch
+	st = status
