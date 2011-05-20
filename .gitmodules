@@ -7,3 +7,6 @@
 [submodule "vimplugins/vim-colors-solarized"]
 	path = vimplugins/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized
+[submodule "vimplugins/gundo"]
+	path = vimplugins/gundo
+	url = git://github.com/sjl/gundo.vim.git
