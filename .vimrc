@@ -5,6 +5,7 @@
 " ---	-----------																							----
 " n		Toggles NERDTree open/closed													|	All
 " l		Toggles invisible characters (line breaks, tabs etc.)	|	Normal
+" a		Toggles autoclose plugin
 " ew	Edit file in directory of current file, in new window	|	All
 " es	Edit file in directory of current file, in new split	|	All
 " ev	Edit file in directory of current file, in new vsplit	|	All
@@ -17,7 +18,30 @@
 " F5	Toggle Gundo tree
 " CTRL-↑	Bubble line(s) up
 " CTRL-↓	Bubble line(s) down
-"----------------------------------------------------------------------
+"
+" Plugin Cheatsheets
+" ==================
+" NERDTree:
+" 	SHIFT-B	Toggle bookmarks
+" 	SHIFT-I	Toggle hidden files
+" 	SHIFT-F	Toggle files
+" 	SHIFT-C Set current dir as tree root
+"
+" Autoclose:
+" 	Use double {{ to open a new line between the braces
+"
+" Fugitive:
+" 	:Git			Run any git command
+" 	:Gwrite		Stage current file
+" 	:Gread		Checkout current file
+" 	:Gremove	Unstage current file
+" 	:Gmove		Rename current file
+" 	:Gcommit	Commit the staged files
+" 	:Gstatus	Open status window
+" 	-					Stage/unstage files in status window
+" 	<Enter>		Open the selected file in status window
+" 	SHIFT-C		Commit from status window
+" "----------------------------------------------------------------------
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -116,11 +140,27 @@ map <leader>et :tabe %%
 nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_au
 
-" Editing and reloading this file
+" Autocommands
 if has("autocmd")
+	" Editing and reloading this file
 	autocmd bufwritepost .vimrc source $MYVIMRC
+
+" Automatically delete fugitive buffers
+	autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
-nmap <leader>v :vsp $MYVIMRC<CR>
+
+" Quick edit .vimrc
+fun! SplitIfBufferModified()
+	" If the current buffer has no name and is not modifed (eg. when vim is first launched),
+	" open the .vimrc file in the current window; otherwise open in a new vsplit
+	if empty(bufname("%")) && &modified == 0
+		e $MYVIMRC
+	else
+		vsp $MYVIMRC
+	endif
+endfun
+
+nmap <leader>v :call SplitIfBufferModified()<CR>
 
 " Bubble single lines
 nmap <C-Up> ddkP
@@ -132,3 +172,6 @@ vmap <C-Down> xp`[V`]
 
 " Toggle Gundo
 nnoremap <F5> :GundoToggle<CR>
+
+" Show git branch in status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
