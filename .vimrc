@@ -1,6 +1,6 @@
 "----------------------------------------------------------------------
-" Mappings (leader = ,)
-" =====================
+" Leader Mappings (leader = ,)
+" ============================
 " Key	Description																							Mode
 " ---	-----------																							----
 " n		Toggles NERDTree open/closed													|	All
@@ -11,6 +11,12 @@
 " et	Edit file in directory of current file, in new tab		| All
 " s		Toggles spell checking on/off													| Normal
 " v		Edit .vimrc file in a new vsplit											| Normal
+"
+"	Other Mappings
+"	==============
+" F5	Toggle Gundo tree
+" CTRL-↑	Bubble line(s) up
+" CTRL-↓	Bubble line(s) down
 "----------------------------------------------------------------------
 
 " When started as "evim", evim.vim will already have done these settings.
@@ -123,3 +129,6 @@ nmap <C-Down> ddp
 " Bubble multiple lines
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
+
+" Toggle Gundo
+nnoremap <F5> :GundoToggle<CR>
