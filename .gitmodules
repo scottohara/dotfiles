@@ -1,15 +1,15 @@
-[submodule "vimplugins/xmledit"]
-	path = vimplugins/xmledit
+[submodule ".vim/bundle/xmledit"]
+	path = .vim/bundle/xmledit
 	url = git://github.com/sukima/xmledit.git
-[submodule "vimplugins/surround"]
-	path = vimplugins/surround
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "vimplugins/vim-colors-solarized"]
-	path = vimplugins/vim-colors-solarized
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized
-[submodule "vimplugins/gundo"]
-	path = vimplugins/gundo
+[submodule ".vim/bundle/gundo"]
+	path = .vim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
-[submodule "vimplugins/fugitive"]
-	path = vimplugins/fugitive
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
