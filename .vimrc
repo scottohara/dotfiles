@@ -43,6 +43,9 @@
 " 	SHIFT-C		Commit from status window
 " "----------------------------------------------------------------------
 
+" Load pathogen
+call pathogen#runtime_append_all_bundles()
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
