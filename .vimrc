@@ -41,10 +41,14 @@
 " 	-					Stage/unstage files in status window
 " 	<Enter>		Open the selected file in status window
 " 	SHIFT-C		Commit from status window
-" "----------------------------------------------------------------------
+"
+" Preview:
+" 	:PreviewMarkdown	view the current *.md file in a browser
+"----------------------------------------------------------------------
 
 " Load pathogen
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -178,3 +182,6 @@ nnoremap <F5> :GundoToggle<CR>
 
 " Show git branch in status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" Preview plugin settings
+let g:PreviewBrowsers='google-chrome'
