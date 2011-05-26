@@ -106,3 +106,19 @@ GIT_PS1_SHOWSTASHSTATE="y"
 GIT_PS1_SHOWUNTRACKEDFILES="y"
 GIT_PS1_SHOWUPSTREAM="verbose"
 PS1=$(echo ${PS1%\\$ })'$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")$ '
+
+# Git aliases
+alias gcl='git clone'
+alias gco='git checkout'
+alias gb='git branch'
+alias ga='git add'
+alias gd='git diff'
+alias gs='git status'
+alias gl='git log'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcm='git commit -m'
+alias gcma='git commit -am'
+alias gp='git push'
+alias gpu='git pull'
+alias gsu='git submodule add'
