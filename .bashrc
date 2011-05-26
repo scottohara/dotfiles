@@ -105,7 +105,7 @@ GIT_PS1_SHOWDIRTYSTATE="y"
 GIT_PS1_SHOWSTASHSTATE="y"
 GIT_PS1_SHOWUNTRACKEDFILES="y"
 GIT_PS1_SHOWUPSTREAM="verbose"
-PS1=$(echo ${PS1%\\$ })'$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")$ '
+#PS1=$(echo ${PS1%\\$ })'$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")$ '
 
 # Git aliases
 alias gcl='git clone'
@@ -122,3 +122,30 @@ alias gcma='git commit -am'
 alias gp='git push'
 alias gpu='git pull'
 alias gsu='git submodule add'
+
+# SVN prompt
+function is_svn() {
+	if [[ -d .svn ]]; then
+		echo 1
+	fi
+}
+
+function __svn_ps1() {
+	if [ $(is_svn) ]; then
+		SVN_ROOT=$(svn info | sed -n 's/Repository\ Root:\ .*\///p')
+		svn info | sed -n "s/Revision: \([0-9]*\).*$/$SVN_ROOT:\1/p"
+		#svn info | sed -n "s/URL:\ .*$SVN_ROOT\///p" | sed "s/\/.*$//"
+	fi
+}
+
+function __scm_ps1() {
+	local s=
+	if [ $(is_svn) ]; then
+		s=" ($(__svn_ps1))"
+	else
+		s=$(__git_ps1 " (%s)")
+	fi
+	echo -n "$s"
+}
+
+PS1=$(echo ${PS1%\\$ })'\[\033[1;32m\]$(__scm_ps1)\[\033[0m\]$ '
