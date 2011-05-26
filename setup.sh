@@ -10,5 +10,7 @@ echo "Symlinking .gitconfig"
 ln -s ./.gitconfig ~./gitconfig
 echo "Symlinking .bashrc"
 ln -s ./.bashrc ~/.bashrc
+echo "Symlinking .zshrc"
+ln -s ./.zshrc ~/.zshrc
 echo "Done"
 exit 0
