@@ -1,16 +1,19 @@
 #!/bin/bash
 
 echo "Symlinking .vim/autoload (pathogen)"
-ln -s ./.vim/autoload/autoload ~/.vim/autoload
+ln -s $(dirname "$0")/.vim/autoload/autoload ~/.vim/autoload
 echo "Symlinking ./vim/bundle (plugins)"
-ln -s ./.vim/bundle ~/.vim/bundle
+ln -s $(dirname "$0")/.vim/bundle ~/.vim/bundle
 echo "Symlinking ./vimrc"
-ln -s ./.vimrc ~/.vimrc
+ln -s $(dirname "$0")/.vimrc ~/.vimrc
 echo "Symlinking .gitconfig"
-ln -s ./.gitconfig ~./gitconfig
+ln -s $(dirname "$0")/.gitconfig ~./gitconfig
 echo "Symlinking .bashrc"
-ln -s ./.bashrc ~/.bashrc
+ln -s $(dirname "$0")/.bashrc ~/.bashrc
 echo "Symlinking .zshrc"
-ln -s ./.zshrc ~/.zshrc
+ln -s $(dirname "$0")/.zshrc ~/.zshrc
+echo "Symlinking Konsole Solarized"
+ln -s $(dirname "$0")/konsole-colors-solarized/Solarized\ Dark.colorscheme ~/.kde/share/apps/konsole/Solarized\ Dark.colorscheme
+ln -s $(dirname "$0")/konsole-colors-solarized/Solarized\ Light.colorscheme ~/.kde/share/apps/konsole/Solarized\ Light.colorscheme
 echo "Done"
 exit 0
