@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(readlink "$(dirname "$0")")
+SCRIPT_DIR=$(readlink -f "$(dirname "$0")")
 
 if [ ! -d ~/.vim ]; then
 	echo "Creating .vim directory"
