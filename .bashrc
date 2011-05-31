@@ -176,4 +176,4 @@ function __scm_ps1() {
 PS1=$(echo ${PS1%\\$ })'\[\033[1;31m\]$(__scm_ps1)\[\033[0m\]$ '
 
 # Use vi mode
-set -o vi
+#set -o vi
