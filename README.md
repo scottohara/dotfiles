@@ -1,7 +1,7 @@
 Installing
 ==========
 - cd ~/
-- git clone --recursive git://github.com/scotto74/dotfiles.git
+- git clone --recursive git://github.com/scottohara/dotfiles.git
 - cd dotfiles && setup.sh
 
 Dependencies
