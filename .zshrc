@@ -17,7 +17,7 @@ export ZSH_THEME="kennethreitz"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github svn gem npm ruby)
+plugins=(command-not-found deb git github git-flow svn gem npm ruby)
 
 source $ZSH/oh-my-zsh.sh
 
