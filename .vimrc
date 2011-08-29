@@ -79,8 +79,7 @@ Bundle 'greyblake/vim-preview'
 Bundle 'majutsushi/tagbar'
 
 " vim-scripts bundles
-"Bundle 'AutoClose'
-Bundle 'ClosePairs'
+Bundle 'AutoClose'
 .
 " Non-GitHub bundles
 Bundle 'git://repo.or.cz/vcscommand'
