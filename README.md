@@ -7,3 +7,4 @@ Installing
 Dependencies
 ============
 Preview plugin requires bluecloth gem (sudo gem install bluecloth)
+Tagbar plugin requires exuberant-ctags (sudo apt-get install exuberant-ctags)

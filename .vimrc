@@ -6,6 +6,7 @@
 " n		Toggles NERDTree open/closed													|	All
 " l		Toggles invisible characters (line breaks, tabs etc.)	|	Normal
 " a		Toggles autoclose plugin
+" t		Toggles Tagbar open/closed														| All
 " ew	Edit file in directory of current file, in new window	|	All
 " es	Edit file in directory of current file, in new split	|	All
 " ev	Edit file in directory of current file, in new vsplit	|	All
@@ -46,10 +47,6 @@
 " 	:PreviewMarkdown	view the current *.md file in a browser
 "----------------------------------------------------------------------
 
-" Load pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -58,6 +55,31 @@ endif
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off	"turn off filetype checks before running vundle (turn back on later)
+
+" Load pathogen
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
+
+" Load vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let vundle manage itself
+Bundle 'gmarik/vundle'
+
+" GitHub bundles
+Bundle 'sukima/xmledit'
+Bundle 'tpope/vim-surround'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'greyblake/vim-preview'
+Bundle 'majutsushi/tagbar'
+
+" Non-GitHub bundles
+Bundle 'git://repo.or.cz/vcscommand'
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -127,10 +149,13 @@ let mapleader=","
 map <Leader>n :NERDTreeToggle<CR>
 
 " Enable filetype plugins
-filetype plugin on
+filetype plugin indent on
 
 " Toggle invisibles
 nmap <leader>l :set list!<CR>
+
+" Toggle tagbar
+map <Leader>t :TagbarToggle<CR>
 
 " Edit file shortcuts
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
@@ -185,3 +210,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Preview plugin settings
 let g:PreviewBrowsers='google-chrome'
+
+" Treat .asp files as javascript
+let g:filetype_asp = 'javascript'

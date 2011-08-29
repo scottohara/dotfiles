@@ -177,3 +177,6 @@ PS1=$(echo ${PS1%\\$ })'\[\033[1;31m\]$(__scm_ps1)\[\033[0m\]$ '
 
 # Use vi mode
 #set -o vi
+
+# Add rubygems to path
+PATH=$PATH:/var/lib/gems/1.8/bin

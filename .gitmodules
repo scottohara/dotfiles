@@ -1,30 +1,6 @@
-[submodule ".vim/bundle/xmledit"]
-	path = .vim/bundle/xmledit
-	url = git://github.com/sukima/xmledit.git
-	ignore = untracked
-[submodule ".vim/bundle/surround"]
-	path = .vim/bundle/surround
-	url = git://github.com/tpope/vim-surround.git
-	ignore = untracked
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized
-[submodule ".vim/bundle/gundo"]
-	path = .vim/bundle/gundo
-	url = git://github.com/sjl/gundo.vim.git
-	ignore = untracked
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
 [submodule ".vim/autoload"]
 	path = .vim/autoload
 	url = git://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/preview"]
-	path = .vim/bundle/preview
-	url = git://github.com/greyblake/vim-preview.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
@@ -34,7 +10,7 @@
 [submodule "gnome-terminal-colors-solarized"]
 	path = gnome-terminal-colors-solarized
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
-[submodule ".vim/bundle/vcscommand"]
-	path = .vim/bundle/vcscommand
-	url = git://repo.or.cz/vcscommand
+[submodule ".vim/bundle/vundle"]
+	path = .vim/bundle/vundle
+	url = git://github.com/gmarik/vundle
 	ignore = untracked
