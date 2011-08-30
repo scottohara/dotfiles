@@ -55,34 +55,13 @@ endif
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-filetype off	"turn off filetype checks before running vundle (turn back on later)
 
 " Load pathogen
 "call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
 
-" Load vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let vundle manage itself
-Bundle 'gmarik/vundle'
-
-" GitHub bundles
-Bundle 'sukima/xmledit'
-Bundle 'tpope/vim-surround'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'greyblake/vim-preview'
-Bundle 'majutsushi/tagbar'
-
-" vim-scripts bundles
-Bundle 'AutoClose'
-.
-" Non-GitHub bundles
-Bundle 'git://repo.or.cz/vcscommand'
+" Load vundler
+source ~/.vim/bundles.vim
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -103,6 +82,7 @@ set showmatch
 set ignorecase
 set smartcase
 set hidden		" allow easy switching from a modified buffer
+set showtabline=2 " always show tabs
 
 " Whitespace
 set list listchars=tab:▸\ ,trail:.,eol:¬

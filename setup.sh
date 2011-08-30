@@ -9,9 +9,11 @@ fi
 
 echo "Symlinking .vim/autoload (pathogen)"
 ln -s $SCRIPT_DIR/.vim/autoload/autoload ~/.vim/autoload
-echo "Symlinking ./vim/bundle (plugins)"
+echo "Symlinking .vim/bundles.vim (vundler)"
+ln -s $SCRIPT_DIR/.vim/bundles.vim ~/.vim/bundles.vim
+echo "Symlinking .vim/bundle (plugins)"
 ln -s $SCRIPT_DIR/.vim/bundle ~/.vim/bundle
-echo "Symlinking ./vimrc"
+echo "Symlinking .vimrc"
 ln -s $SCRIPT_DIR/.vimrc ~/.vimrc
 echo "Symlinking .gitconfig"
 ln -s $SCRIPT_DIR/.gitconfig ~/.gitconfig
