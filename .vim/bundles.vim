@@ -10,10 +10,11 @@ Bundle 'gmarik/vundle'
 
 " GitHub bundles
 Bundle 'sukima/xmledit'
-Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
 Bundle 'scrooloose/nerdtree'
 Bundle 'greyblake/vim-preview'
