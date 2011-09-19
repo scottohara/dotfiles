@@ -47,8 +47,6 @@ if [ $MODE = "i" ]; then
 	ln -s $SCRIPT_DIR/.vimrc ~/.vimrc
 	echo "Symlinking .gitconfig"
 	ln -s $SCRIPT_DIR/.gitconfig ~/.gitconfig
-	echo "Symlinking .bashrc"
-	ln -s $SCRIPT_DIR/.bashrc ~/.bashrc
 	echo "Symlinking .zshrc"
 	ln -s $SCRIPT_DIR/.zshrc ~/.zshrc
 	echo "Symlinking .profile"
@@ -72,8 +70,6 @@ else
 	rm ~/.vimrc
 	echo "Removing symlink for .gitconfig"
 	rm ~/.gitconfig
-	echo "Removing symlink for .bashrc"
-	rm ~/.bashrc
 	echo "Removing symlink for .zshrc"
 	rm ~/.zshrc
 	echo "Removing symlink for .profile"
