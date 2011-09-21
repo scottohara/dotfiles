@@ -197,5 +197,6 @@ let g:PreviewBrowsers='google-chrome'
 " Treat .asp files as javascript
 let g:filetype_asp = 'javascript'
 
-set transparency=3
-set guifont=Menlo:h11
+if has("transparency")
+	set transparency=3
+endif
