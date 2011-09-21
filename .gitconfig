@@ -11,3 +11,6 @@
 	st = status
 [color]
 	ui = auto
+[github]
+	token = f3c420899b6127a064a806d2aa29454f
+	user = scottohara

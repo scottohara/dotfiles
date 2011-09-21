@@ -87,3 +87,4 @@ PS1=$(echo ${PS1%\\$ })'\[\033[1;31m\]$(__scm_ps1)\[\033[0m\]$ '
 
 export http_proxy=http://ns.proxy.nextgen.net:8000
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
