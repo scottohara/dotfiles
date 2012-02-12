@@ -115,12 +115,12 @@ endif
 set background=dark
 colorscheme solarized
 
-" Line numbers
-set number
+" Relative Line numbers
+set rnu
 
 " Tabs
 set shiftwidth=2
-"set expandtab
+set noexpandtab
 set smarttab
 set tabstop=2
 set autoindent
