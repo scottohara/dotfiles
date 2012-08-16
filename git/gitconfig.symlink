@@ -1,0 +1,17 @@
+[user]
+	email = scott@oharagroup.net
+	name = Scott O'Hara
+[core]
+	excludesfile = ~/.gitignore_global
+[alias]
+	co = checkout
+	br = branch
+	st = status
+[color]
+	ui = auto
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

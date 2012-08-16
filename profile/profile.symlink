@@ -1,0 +1,33 @@
+# Source all *.bash files for .dotfiles topics
+if [ -d ~/.dotfiles ]; then
+	for source_file in ~/.dotfiles/**/*.bash; do
+		source $source_file
+	done
+fi
+
+# Source any sensitive or environment specific files not pushed to Git
+if [ -d ~/.localrc ]; then
+	# Turn on globbing for hidden files
+	shopt -s dotglob
+
+	for source_file in ~/.localrc/*; do
+		source $source_file
+	done
+
+	# Turn off globbing for hidden files
+	shopt -u dotglob
+fi
+
+# Setup the prompt
+function __scm_ps1() {
+	local s=
+	if [[ -d .svn ]]; then
+		s=" ($(__svn_ps1))"
+	else
+		# Replace the standard git-core indicators
+		s=$(replace_git_ps1_indicators "$(__git_ps1 ' (%s)')")
+	fi
+	echo -n "$s"
+}
+
+PS1=$(echo ${PS1%\\$ })'\[\033[1;31m\]$(__scm_ps1)\[\033[0m\]$ '

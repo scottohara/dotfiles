@@ -13,6 +13,7 @@
 " et	Edit file in directory of current file, in new tab		| All
 " s		Toggles spell checking on/off													| Normal
 " v		Edit .vimrc file in a new vsplit											| Normal
+" x		Pretty-print selected XML															| Visual
 "
 "	Other Mappings
 "	==============
@@ -55,10 +56,6 @@ endif
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-
-" Load pathogen
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
 
 " Load vundler
 source ~/.vim/bundles.vim
@@ -184,6 +181,9 @@ nmap <C-Down> ddp
 " Bubble multiple lines
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
+
+" Pretty-print selected XML text
+vmap <leader>x !xmllint --format -<CR>
 
 " Toggle Gundo
 nnoremap <F5> :GundoToggle<CR>
