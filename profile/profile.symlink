@@ -18,6 +18,13 @@ if [ -d ~/.localrc ]; then
 	shopt -u dotglob
 fi
 
+# Setup the default editor
+if [ -x `which mvim` ]; then
+	export EDITOR=mvim
+elif [ -x `which gvim` ]; then
+	export EDITOR=gvim
+fi
+
 # Setup the prompt
 function __scm_ps1() {
 	local s=
