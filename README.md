@@ -39,6 +39,7 @@ Setting up a new Mac
 4. Install MacVim (`brew install macvim && brew linkapps`)
 5. Enable experimental renderer in MacVim (for transparency)
 6. Edit `/etc/paths`; move `/usr/local/bin` to top (ie. prefer Homebrew installed versions over default system versions; eg. Git)
+7. Import Solarized profiles into Terminal.app; set as startup settings; change font to Menlo; drop opacity to 95%
 
 Thanks
 ======
