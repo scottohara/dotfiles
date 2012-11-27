@@ -26,7 +26,7 @@ elif [ -x `which gvim` ]; then
 fi
 
 # Setup the prompt
-function __scm_ps1() {
+__scm_ps1() {
 	local s=
 	if [[ -d .svn ]]; then
 		s=" ($(__svn_ps1))"

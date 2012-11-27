@@ -5,7 +5,7 @@ GIT_PS1_SHOWUNTRACKEDFILES="y"
 GIT_PS1_SHOWUPSTREAM="verbose"
 #PS1=$(echo ${PS1%\\$ })'$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")$ '
 
-function replace_git_ps1_indicators() {
+replace_git_ps1_indicators() {
 	local s=$1
 	
 	# Upstream diverged (u+n-n)=> ▶n◀n (\u25B6 & \u25C0)
