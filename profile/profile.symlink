@@ -28,7 +28,7 @@ fi
 # Setup the prompt
 __scm_ps1() {
 	local s=
-	if [[ -d .svn ]]; then
+	if (svn info &> /dev/null); then
 		s=" ($(__svn_ps1))"
 	else
 		# Replace the standard git-core indicators
