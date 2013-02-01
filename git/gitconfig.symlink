@@ -17,3 +17,5 @@
 	trustExitCode = true
 [help]
 	autocorrect = 50
+[push]
+	default = simple
