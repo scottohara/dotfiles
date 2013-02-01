@@ -1,3 +1,9 @@
+# Built-in git prompt
+GIT_PROMPT=/usr/local/etc/bash_completion.d/git-prompt.sh
+if [ -f $GIT_PROMPT ]; then
+	source $GIT_PROMPT
+fi
+
 # Git prompt
 GIT_PS1_SHOWDIRTYSTATE="y"
 GIT_PS1_SHOWSTASHSTATE="y"
