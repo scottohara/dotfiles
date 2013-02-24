@@ -3,6 +3,7 @@
 	name = Scott O'Hara
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = $EDITOR -f
 [alias]
 	co = checkout
 	br = branch

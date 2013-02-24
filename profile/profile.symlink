@@ -19,9 +19,9 @@ if [ -d ~/.localrc ]; then
 fi
 
 # Setup the default editor
-if [ -x `which mvim` ]; then
+if [ `command -v mvim` ]; then
 	export EDITOR=mvim
-elif [ -x `which gvim` ]; then
+elif [ `command -v gvim` ]; then
 	export EDITOR=gvim
 fi
 
