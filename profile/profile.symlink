@@ -18,6 +18,9 @@ if [ -d ~/.localrc ]; then
 	shopt -u dotglob
 fi
 
+# Correct any mistyped cd commands
+shopt -s cdspell
+
 # Setup the default editor
 if [ `command -v mvim` ]; then
 	export EDITOR=mvim
