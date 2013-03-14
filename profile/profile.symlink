@@ -1,3 +1,6 @@
+# Turn on extended globbing for filtering out any backup files (~)
+shopt -s extglob
+
 # Source all *.bash files for .dotfiles topics
 if [ -d ~/.dotfiles ]; then
 	for source_file in ~/.dotfiles/**/*.bash; do
