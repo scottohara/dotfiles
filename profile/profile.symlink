@@ -10,7 +10,8 @@ if [ -d ~/.localrc ]; then
 	# Turn on globbing for hidden files
 	shopt -s dotglob
 
-	for source_file in ~/.localrc/*; do
+	for source_file in ~/.localrc/!(*~); do
+		echo "Sourcing $source_file"
 		source $source_file
 	done
 
