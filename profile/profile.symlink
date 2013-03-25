@@ -1,6 +1,3 @@
-# Turn on extended globbing for filtering out any backup files (~)
-shopt -s extglob
-
 # Source all *.bash files for .dotfiles topics
 if [ -d ~/.dotfiles ]; then
 	for source_file in ~/.dotfiles/**/*.bash; do
@@ -13,8 +10,10 @@ if [ -d ~/.localrc ]; then
 	# Turn on globbing for hidden files
 	shopt -s dotglob
 
-	for source_file in ~/.localrc/!(*~); do
-		source $source_file
+	for source_file in ~/.localrc/*; do
+		if ! ( echo $source_file | grep -q "~$" ); then
+			source $source_file
+		fi
 	done
 
 	# Turn off globbing for hidden files
