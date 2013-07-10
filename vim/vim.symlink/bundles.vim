@@ -33,6 +33,7 @@ Bundle 'nelstrom/vim-markdown-preview'
 Bundle 'majutsushi/tagbar'
 Bundle 'hallettj/jslint.vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'bling/vim-airline'
 
 " vim-scripts bundles
 Bundle 'AutoClose'

@@ -194,6 +194,9 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " Preview plugin settings
 let g:PreviewBrowsers='google-chrome'
 
+" Airline theme
+let g:airline_theme='badwolf'
+
 " Treat .asp files as javascript
 let g:filetype_asp = 'javascript'
 
