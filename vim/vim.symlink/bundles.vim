@@ -28,16 +28,19 @@ Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'greyblake/vim-preview'
 Bundle 'nelstrom/vim-markdown-preview'
 Bundle 'majutsushi/tagbar'
 Bundle 'hallettj/jslint.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
+Bundle 'mileszs/ack.vim'
 
 " vim-scripts bundles
 Bundle 'AutoClose'
 Bundle 'bufexplorer.zip'
+Bundle 'scratch'
 .
 " Non-GitHub bundles
 Bundle 'git://repo.or.cz/vcscommand'

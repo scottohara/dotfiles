@@ -5,8 +5,8 @@
 " ---	-----------																							----
 " n		Toggles NERDTree open/closed													|	All
 " l		Toggles invisible characters (line breaks, tabs etc.)	|	Normal
-" a		Toggles autoclose plugin
 " t		Toggles Tagbar open/closed														| All
+" a		Toggle Autoclose on/off
 " ew	Edit file in directory of current file, in new window	|	All
 " es	Edit file in directory of current file, in new split	|	All
 " ev	Edit file in directory of current file, in new vsplit	|	All
@@ -14,6 +14,8 @@
 " s		Toggles spell checking on/off													| Normal
 " v		Edit .vimrc file in a new vsplit											| Normal
 " x		Pretty-print selected XML															| Visual
+" <space> Clear the previous search (ie. turn off highlight)| Normal
+" <tab> Jump between matching parens												| Normal, Visual
 "
 "	Other Mappings
 "	==============
@@ -28,6 +30,13 @@
 " 	SHIFT-I	Toggle hidden files
 " 	SHIFT-F	Toggle files
 " 	SHIFT-C Set current dir as tree root
+"
+" NERDCommenter:
+" 	,c<space>	Toggle comment state of selected lines
+" 	,cc		Comment selected lines
+" 	,cu		Uncomment selected lines
+" 	,cm		Comment using multipart delimiters
+" 	,cs		Sexy comments
 "
 " Autoclose:
 " 	Use double {{ to open a new line between the braces
@@ -46,6 +55,10 @@
 "
 " Preview:
 " 	:PreviewMarkdown	view the current *.md file in a browser
+"
+" Scratch:
+"		:ScratchOpen	open a new scratch buffer that will not be saved on close
+"		:ScratchClose	close the scratch buffer
 "----------------------------------------------------------------------
 
 " When started as "evim", evim.vim will already have done these settings.
@@ -147,6 +160,22 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 " as above, in a new tab"
 map <leader>et :tabe %%
+
+" Clear the previous search (ie. turn off highlighting)
+nnoremap <leader><space> :noh<CR>
+
+" Jump between matching parens
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Move up/down by one screen line at a time, not by one file line (ie. moving
+" on wrapped lines)
+nnoremap j gj
+nnoremap k gk
+
+" Map semi-colon to colon in normal mode (so that commands like :w will also
+" work as ;w saving the shift modifier)
+nnoremap ; :
 
 " Toggle spell checking
 nmap <silent> <leader>s :set spell!<CR>
