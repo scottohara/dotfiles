@@ -29,17 +29,20 @@ Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
 Bundle 'greyblake/vim-preview'
 Bundle 'nelstrom/vim-markdown-preview'
 Bundle 'majutsushi/tagbar'
-Bundle 'hallettj/jslint.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'mileszs/ack.vim'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'jlanzarotta/bufexplorer'
+Bundle 'Raimondi/delimitMate'
 
 " vim-scripts bundles
-Bundle 'AutoClose'
-Bundle 'bufexplorer.zip'
+"Bundle 'AutoClose'
 Bundle 'scratch'
 .
 " Non-GitHub bundles

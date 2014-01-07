@@ -6,7 +6,6 @@
 " n		Toggles NERDTree open/closed													|	All
 " l		Toggles invisible characters (line breaks, tabs etc.)	|	Normal
 " t		Toggles Tagbar open/closed														| All
-" a		Toggle Autoclose on/off
 " ew	Edit file in directory of current file, in new window	|	All
 " es	Edit file in directory of current file, in new split	|	All
 " ev	Edit file in directory of current file, in new vsplit	|	All
@@ -22,6 +21,7 @@
 " F5	Toggle Gundo tree
 " CTRL-↑	Bubble line(s) up
 " CTRL-↓	Bubble line(s) down
+" CMD-Enter	Expand {} to multi-line function block
 "
 " Plugin Cheatsheets
 " ==================
@@ -38,11 +38,8 @@
 " 	,cm		Comment using multipart delimiters
 " 	,cs		Sexy comments
 "
-" Autoclose:
-" 	Use double {{ to open a new line between the braces
-"
 " Fugitive:
-" 	:Git			Run any git command
+
 " 	:Gwrite		Stage current file
 " 	:Gread		Checkout current file
 " 	:Gremove	Unstage current file
@@ -100,6 +97,9 @@ set list listchars=tab:▸\ ,trail:.,eol:¬
 " Status bar
 set laststatus=2
 
+" Automatically switch the working directory to the current file
+set autochdir
+
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
@@ -140,6 +140,7 @@ let mapleader=","
 
 " NERDTree stuff
 map <Leader>n :NERDTreeToggle<CR>
+let NERDTreeChDirMode=2
 
 " Enable filetype plugins
 filetype plugin indent on
@@ -232,3 +233,8 @@ let g:filetype_asp = 'javascript'
 if has("transparency")
 	set transparency=3
 endif
+
+" Insert a new line and tab (useful to expand {} into a multi-line block
+inoremap <D-CR> <CR><CR><Up><tab>
+
+let g:bufExplorerFindActive=0
