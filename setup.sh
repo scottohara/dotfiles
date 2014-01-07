@@ -84,6 +84,14 @@ if [ $MODE = "i" ]; then
 		make_link $symlink_file $symlink_basename
 	done
 
+	# Copy all {name}.launchagent files in topics to ~/Library/LaunchAgents/{name}.plist
+	for launchagent_file in $SCRIPT_DIR/**/*.launchagent
+	do
+		launchagent_basename=`basename $symlink_file`
+		launchagent_basename=~/Library/LaunchAgents/${symlink_basename%.launchagent}.plist
+		cp $launchagent_file $launchagent_basename
+	done
+
 	if [ -d ~/.kde/share/apps/konsole ]; then
 		echo "KDE detected, symlinking Konsole Solarized"
 		ln -s $SCRIPT_DIR/konsole-colors-solarized/Solarized\ Dark.colorscheme ~/.kde/share/apps/konsole/Solarized\ Dark.colorscheme

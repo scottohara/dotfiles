@@ -10,6 +10,7 @@ Within each topic:
     - `aliases.bash` contains shell aliases specific to the topic
     - `completion.bash` contains shell completions specific to the topic
     - `prompt.bash` contains shell prompt customisations specific to the topic
+- All `*.launchagent` files are copied to `~/Library/LaunchAgents/*.plist`
 - All `*.symlink` files (and directories) will be symlinked to `~/.{file}` eg.
 
 ```
