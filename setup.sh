@@ -87,8 +87,8 @@ if [ $MODE = "i" ]; then
 	# Copy all {name}.launchagent files in topics to ~/Library/LaunchAgents/{name}.plist
 	for launchagent_file in $SCRIPT_DIR/**/*.launchagent
 	do
-		launchagent_basename=`basename $symlink_file`
-		launchagent_basename=~/Library/LaunchAgents/${symlink_basename%.launchagent}.plist
+		launchagent_basename=`basename $launchagent_file`
+		launchagent_basename=~/Library/LaunchAgents/${launchagent_basename%.launchagent}.plist
 		cp $launchagent_file $launchagent_basename
 	done
 
