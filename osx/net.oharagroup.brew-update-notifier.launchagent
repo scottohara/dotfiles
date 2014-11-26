@@ -4,10 +4,10 @@
 <dict>
 	<key>Label</key>
 	<string>net.oharagroup.brew-update-notifier</string>
-	<key>EnableGlobbing</key>
-	<true/>
 	<key>ProgramArguments</key>
 	<array>
+		<string>bash</string>
+		<string>-c</string>
 		<string>~/.dotfiles/osx/brew-update-notifier</string>
 	</array>
 	<key>StartInterval</key>
