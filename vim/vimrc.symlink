@@ -22,6 +22,9 @@
 " CTRL-↑	Bubble line(s) up
 " CTRL-↓	Bubble line(s) down
 " CMD-Enter	Expand {} to multi-line function block
+"	CTRL-E	Ultisnips trigger
+" SHIFT-TAB	Ultisnips jump forward
+" CTRL-S	Ultisnips jump backward
 "
 " Plugin Cheatsheets
 " ==================
@@ -215,6 +218,9 @@ vmap <C-Down> xp`[V`]
 " Pretty-print selected XML text
 vmap <leader>x !xmllint --format -<CR>
 
+" Pretty-print JSON text
+nmap <leader>j :%!python -m json.tool<CR>
+
 " Toggle Gundo
 nnoremap <F5> :GundoToggle<CR>
 
@@ -238,3 +244,9 @@ endif
 inoremap <D-CR> <CR><CR><Up><tab>
 
 let g:bufExplorerFindActive=0
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<C-E>"
+let g:UltiSnipsJumpForwardTrigger="<S-TAB>"
+let g:UltiSnipsJumpBackwardTrigger="<C-S>""
+let g:UltiSnipsEditSplit="vertical"

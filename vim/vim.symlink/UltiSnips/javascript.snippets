@@ -1,0 +1,17 @@
+snippet desc "describe(...)"
+describe("$1", function() {
+	beforeEach(function() {
+		$2
+	});
+
+	it("should $3", function() {
+		$4
+	});
+});
+endsnippet
+
+snippet it "it(should ...)"
+it("should $1", function() {
+	$2
+});
+endsnippet
