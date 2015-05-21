@@ -41,6 +41,7 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
+Bundle 'editorconfig/editorconfig-vim'
 
 " vim-scripts bundles
 "Bundle 'AutoClose'
