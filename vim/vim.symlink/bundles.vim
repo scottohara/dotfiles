@@ -17,14 +17,15 @@ call vundle#rc()
 " 5) git push
 Bundle 'gmarik/vundle'
 
+" ==========================================
 " GitHub bundles
+" ==========================================
 Bundle 'sukima/xmledit'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 " Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
@@ -41,14 +42,25 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
+
+" Support for .editorconfig
 Bundle 'editorconfig/editorconfig-vim'
+
+" Typescript syntax
 Bundle 'leafgarland/typescript-vim'
 
+" Yet Another JavaScript Syntax (for ES6)
+Bundle 'othree/yajs.vim'
+
+" ==========================================
 " vim-scripts bundles
+" ==========================================
 "Bundle 'AutoClose'
 Bundle 'scratch'
 .
+" ==========================================
 " Non-GitHub bundles
+" ==========================================
 Bundle 'git://repo.or.cz/vcscommand'
 
 filetype plugin indent on
