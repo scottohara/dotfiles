@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# Notify of globally installed npm updates via Notification Center on Mac OS X
+#
+# Author: Chris Streeter http://www.chrisstreeter.com
+# Requires: terminal-notifier. Install with:
+#   gem install terminal-notifier
+
+NPM_EXEC='/usr/local/bin/npm'
+#TERMINAL_NOTIFIER=$(which terminal-notifier)
+TERMINAL_NOTIFIER='/usr/local/bin/terminal-notifier'
+NOTIF_ARGS="-activate com.apple.Terminal"
+
+outdated=`$NPM_EXEC outdated --global --depth=0 | sed 1d | awk '{ print $1 }'`
+
+if [ -z "$outdated" ] ; then
+	if [ -e $TERMINAL_NOTIFIER ]; then
+		# No updates available
+		$TERMINAL_NOTIFIER $NOTIF_ARGS \
+			-title "No NPM Updates Available" \
+			-message "No updates available yet for any npm packages."
+	fi
+else
+	# We've got an outdated package or two
+
+	# Nofity via Notification Center
+	if [ -e $TERMINAL_NOTIFIER ]; then
+		lc=$((`echo "$outdated" | wc -l`))
+		outdated=`echo "$outdated" | tail -$lc`
+		message=`echo "$outdated" | head -5`
+		if [ "$outdated" != "$message" ]; then
+			message="Some of the outdated packages are:
+$message"
+		else
+			message="The following packages are outdated:
+$message"
+		fi
+		# Send to the Nofication Center
+		$TERMINAL_NOTIFIER $NOTIF_ARGS \
+			-title "NPM Update(s) Available" \
+			-message "$message"
+	fi
+fi
