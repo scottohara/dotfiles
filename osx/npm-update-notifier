@@ -6,12 +6,12 @@
 # Requires: terminal-notifier. Install with:
 #   gem install terminal-notifier
 
+NODE_EXEC='/usr/local/bin/node'
 NPM_EXEC='/usr/local/bin/npm'
-#TERMINAL_NOTIFIER=$(which terminal-notifier)
 TERMINAL_NOTIFIER='/usr/local/bin/terminal-notifier'
 NOTIF_ARGS="-activate com.apple.Terminal"
 
-outdated=`$NPM_EXEC outdated --global --depth=0 | sed 1d | awk '{ print $1 }'`
+outdated=`$NODE_EXEC $NPM_EXEC outdated --global --depth=0 | sed 1d | awk '{ print $1 }'`
 
 if [ -z "$outdated" ] ; then
 	if [ -e $TERMINAL_NOTIFIER ]; then
