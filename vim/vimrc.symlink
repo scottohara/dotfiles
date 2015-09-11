@@ -93,6 +93,7 @@ set ignorecase
 set smartcase
 set hidden		" allow easy switching from a modified buffer
 set showtabline=2 " always show tabs
+set sessionoptions+=globals
 
 " Whitespace
 set list listchars=tab:▸\ ,trail:.,eol:¬

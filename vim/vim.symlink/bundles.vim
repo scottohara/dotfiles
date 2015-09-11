@@ -42,6 +42,7 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'Raimondi/delimitMate'
 Bundle 'SirVer/ultisnips'
+Bundle 'cosminadrianpopescu/filesync'
 
 " Support for .editorconfig
 Bundle 'editorconfig/editorconfig-vim'
