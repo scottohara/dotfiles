@@ -6,7 +6,7 @@
 	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule "vim/vim.symlink/bundle/vundle"]
 	path = vim/vim.symlink/bundle/vundle
-	url = git://github.com/gmarik/vundle
+	url = git://github.com/VundleVim/Vundle.vim
 	ignore = untracked
 [submodule "osx/osx-lion-terminal.app-colors-solarized"]
 	path = osx/osx-lion-terminal.app-colors-solarized
