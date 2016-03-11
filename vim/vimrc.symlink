@@ -3,14 +3,16 @@
 " ============================
 " Key	Description																							Mode
 " ---	-----------																							----
-" n		Toggles NERDTree open/closed													|	All
-" l		Toggles invisible characters (line breaks, tabs etc.)	|	Normal
-" t		Toggles Tagbar open/closed														| All
 " ew	Edit file in directory of current file, in new window	|	All
 " es	Edit file in directory of current file, in new split	|	All
 " ev	Edit file in directory of current file, in new vsplit	|	All
 " et	Edit file in directory of current file, in new tab		| All
+" j		Pretty-print JSON
+" l		Toggles invisible characters (line breaks, tabs etc.)	|	Normal
+" n		Toggles NERDTree open/closed													|	All
+" q		Insert double-quotes around word under cursor					| Normal
 " s		Toggles spell checking on/off													| Normal
+" t		Toggles Tagbar open/closed														| All
 " v		Edit .vimrc file in a new vsplit											| Normal
 " x		Pretty-print selected XML															| Visual
 " <space> Clear the previous search (ie. turn off highlight)| Normal
@@ -221,6 +223,9 @@ vmap <leader>x !xmllint --format -<CR>
 
 " Pretty-print JSON text
 nmap <leader>j :%!python -m json.tool<CR>
+
+" Quote current word
+nmap <leader>q ysiw"
 
 " Toggle Gundo
 nnoremap <F5> :GundoToggle<CR>
