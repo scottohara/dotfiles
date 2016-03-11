@@ -20,3 +20,5 @@
 	autocorrect = 50
 [push]
 	default = simple
+[credential]
+	helper = osxkeychain
