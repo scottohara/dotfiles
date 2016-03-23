@@ -237,7 +237,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let g:PreviewBrowsers='google-chrome'
 
 " Airline theme
-let g:airline_theme='badwolf'
+let g:airline_theme='solarized'
 
 " Treat .asp files as javascript
 let g:filetype_asp = 'javascript'
@@ -259,3 +259,6 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
+
+" For vundle, don't ask for Git passwords when installing plugins
+let $GIT_ASKPASS='true'

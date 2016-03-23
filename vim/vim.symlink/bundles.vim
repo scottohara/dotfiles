@@ -7,7 +7,7 @@ call vundle#rc()
 
 " Let vundle manage itself
 " Note: vundle is a submodule of the dotfiles repo, so it has not tracking
-" branch. When running BundleInstall!, you will get an error saying that it
+" branch. When running PluginInstall!, you will get an error saying that it
 " can't pull the latest master; so effectively vundle must be updated
 " manually:
 " 1) cd ~/.dotfiles/vim/vim.symlink/bundle/vundle
@@ -15,53 +15,54 @@ call vundle#rc()
 " 3) cd ~/.dotfiles
 " 4) gcma "Updated to latest vundle"
 " 5) git push
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " ==========================================
 " GitHub bundles
 " ==========================================
-Bundle 'sukima/xmledit'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-" Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-haml'
-" Bundle 'kchmck/vim-coffee-script'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'greyblake/vim-preview'
-Bundle 'nelstrom/vim-markdown-preview'
-Bundle 'majutsushi/tagbar'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'bling/vim-airline'
-Bundle 'mileszs/ack.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'Raimondi/delimitMate'
-Bundle 'SirVer/ultisnips'
-Bundle 'cosminadrianpopescu/filesync'
+Plugin 'sukima/xmledit'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-haml'
+" Plugin 'kchmck/vim-coffee-script'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'greyblake/vim-preview'
+Plugin 'nelstrom/vim-markdown-preview'
+Plugin 'majutsushi/tagbar'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mileszs/ack.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'Raimondi/delimitMate'
+Plugin 'SirVer/ultisnips'
+Plugin 'cosminadrianpopescu/filesync'
 
 " Support for .editorconfig
-Bundle 'editorconfig/editorconfig-vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Typescript syntax
-Bundle 'leafgarland/typescript-vim'
+Plugin 'leafgarland/typescript-vim'
 
 " Yet Another JavaScript Syntax (for ES6)
-Bundle 'othree/yajs.vim'
+Plugin 'othree/yajs.vim'
 
 " ==========================================
 " vim-scripts bundles
 " ==========================================
-"Bundle 'AutoClose'
-Bundle 'scratch'
+"Plugin 'AutoClose'
+Plugin 'scratch'
 .
 " ==========================================
 " Non-GitHub bundles
 " ==========================================
-Bundle 'git://repo.or.cz/vcscommand'
+Plugin 'git://repo.or.cz/vcscommand'
 
 filetype plugin indent on
