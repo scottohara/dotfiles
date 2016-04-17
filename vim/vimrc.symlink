@@ -97,6 +97,10 @@ set hidden		" allow easy switching from a modified buffer
 set showtabline=2 " always show tabs
 set sessionoptions+=globals
 
+" Don't treat numbers prefixed with 0 as octal when incrementing (CTRL-A) or
+" decrementing (CTRL-X)
+set nrformats-=octal
+
 " Whitespace
 set list listchars=tab:▸\ ,trail:.,eol:¬
 
@@ -180,6 +184,14 @@ vnoremap <tab> %
 nnoremap j gj
 nnoremap k gk
 
+" Always show at least one line above/below cursor when scrolling
+if !&scrolloff
+	set scrolloff=1
+endif
+if !&sidescrolloff
+	set sidescrolloff=5
+endif
+
 " Map semi-colon to colon in normal mode (so that commands like :w will also
 " work as ;w saving the shift modifier)
 nnoremap ; :
@@ -262,3 +274,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " For vundle, don't ask for Git passwords when installing plugins
 let $GIT_ASKPASS='true'
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+	runtime! macros/matchit.vim
+endif
