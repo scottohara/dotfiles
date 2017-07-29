@@ -3,13 +3,17 @@
 	name = Scott O'Hara
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = $EDITOR -f
+	editor = code --wait
 [alias]
 	co = checkout
 	br = branch
 	st = status
 [color]
 	ui = auto
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
