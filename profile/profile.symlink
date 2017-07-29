@@ -60,7 +60,7 @@ HISTTIMEFORMAT='%F %T '
 # Setup the default editor
 if [ `command -v code` ]; then
 	export EDITOR=code
-if [ `command -v mvim` ]; then
+elif [ `command -v mvim` ]; then
 	export EDITOR=code
 elif [ `command -v gvim` ]; then
 	export EDITOR=gvim
