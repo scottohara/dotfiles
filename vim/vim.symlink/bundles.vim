@@ -38,7 +38,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mileszs/ack.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'       " Disabled with switch to vscode as default editor
 Plugin 'marijnh/tern_for_vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Raimondi/delimitMate'
