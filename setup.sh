@@ -84,6 +84,13 @@ if [ $MODE = "i" ]; then
 		make_link $symlink_file $symlink_basename
 	done
 
+	# Special case symlink for vscode files
+	if [ -d ~/Library/Application\ Support/Code/User ]; then
+		ln -s $SCRIPT_DIR/vscode/projects.json ~/Library/Application\ Support/Code/User/projects.json
+		ln -s $SCRIPT_DIR/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+		ln -s $SCRIPT_DIR/vscode/snippets ~/Library/Application\ Support/Code/User/snippets
+	fi
+
 	# Copy all {name}.launchagent files in topics to ~/Library/LaunchAgents/{name}.plist
 	for launchagent_file in $SCRIPT_DIR/**/*.launchagent
 	do

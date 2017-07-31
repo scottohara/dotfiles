@@ -1,0 +1,24 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/*~": true
+    },
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.renderWhitespace": "none",
+    "window.nativeTabs": true,
+    "workbench.editor.swipeToNavigate": true,
+    "javascript.implicitProjectConfig.checkJs": false,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Operator Mono', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "vscode_custom_css.imports": [
+        "file:///Users/scotto/.dotfiles/vscode/styles.css",
+        "file:///Users/scott/.dotfiles/vscode/styles.css"
+    ],
+    "editor.renderControlCharacters": true,
+    "editor.fontSize": 13,
+    "workbench.startupEditor": "none"
+}
