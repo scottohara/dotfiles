@@ -64,5 +64,11 @@
 		"rootPath": "$home/Subversion/LIBNGW",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "dotfiles",
+		"rootPath": "$home/GitHub/dotfiles",
+		"paths": [],
+		"group": ""
 	}
 ]
