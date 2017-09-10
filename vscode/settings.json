@@ -20,5 +20,6 @@
     ],
     "editor.renderControlCharacters": true,
     "editor.fontSize": 13,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "editor.smoothScrolling": true
 }
