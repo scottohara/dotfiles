@@ -70,5 +70,23 @@
 		"rootPath": "$home/GitHub/dotfiles",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "rubocop-config-oharagroup",
+		"rootPath": "$home/GitHub/rubocop-config-oharagroup",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "eslint-config-oharagroup",
+		"rootPath": "$home/GitHub/eslint-config-oharagroup",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "atlassian-marketplace-dashboard",
+		"rootPath": "$home/GitHub/atlassian-marketplace-dashboard",
+		"paths": [],
+		"group": ""
 	}
 ]
