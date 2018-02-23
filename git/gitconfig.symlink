@@ -24,5 +24,6 @@
 	autocorrect = 50
 [push]
 	default = simple
+	followTags = true
 [credential]
 	helper = osxkeychain
