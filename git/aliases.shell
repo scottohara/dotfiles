@@ -1,10 +1,3 @@
-# If hub is installed, use it (http://defunkt.github.com/hub/)
-hub_path=$(which hub)
-if [[ -f $hub_path ]]
-then
-  alias git=$hub_path
-fi
-
 # Quick git commands
 alias gcl='git clone'
 alias gco='git checkout'

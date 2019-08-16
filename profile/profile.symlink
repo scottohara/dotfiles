@@ -1,61 +1,24 @@
-# Source all *.bash files for .dotfiles topics
+################################################################
+# This file contains machine-agnostic, shell-agnostic settings #
+################################################################
+
+# Source all *.shell files for .dotfiles topics
 if [ -d ~/.dotfiles ]; then
-	for source_file in ~/.dotfiles/**/*.bash; do
+	# Init scripts
+	for source_file in ~/.dotfiles/**/init.shell; do
+		source $source_file
+	done
+
+	# Paths
+	for source_file in ~/.dotfiles/**/paths.shell; do
+		source $source_file
+	done
+	
+	# Aliases
+	for source_file in ~/.dotfiles/**/aliases.shell; do
 		source $source_file
 	done
 fi
-
-# Source any sensitive or environment specific files not pushed to Git
-if [ -d ~/.localrc ]; then
-	# Turn on globbing for hidden files
-	shopt -s dotglob
-
-	for source_file in ~/.localrc/*; do
-		if ! ( echo $source_file | grep -q "~$" ); then
-			source $source_file
-		fi
-	done
-
-	# Turn off globbing for hidden files
-	shopt -u dotglob
-fi
-
-# Correct any mistyped cd commands
-shopt -s cdspell
-
-# Update window size after every command
-shopt -s checkwinsize
-
-# Append to the history file, don't overwrite it
-shopt -s histappend
-
-# Save multi-line commands as one command
-shopt -s cmdhist
-
-# This allows you to bookmark your favorite places across the file system
-# Define a variable containing a path and you will be able to cd into it regardless of the directory you're in
-shopt -s cdable_vars
-
-# Examples:
-# export dotfiles="$HOME/dotfiles"
-# export projects="$HOME/projects"
-# export documents="$HOME/Documents"
-# export dropbox="$HOME/Dropbox"
-
-# Huge history. Doesn't appear to slow things down, so why not?
-HISTSIZE=500000
-HISTFILESIZE=100000
-
-# Avoid duplicate entries
-HISTCONTROL="erasedups:ignoreboth"
-
-# Don't record some commands
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
-
-# Use standard ISO 8601 timestamp
-# %F equivalent to %Y-%m-%d
-# %T equivalent to %H:%M:%S (24-hours format)
-HISTTIMEFORMAT='%F %T '
 
 # Setup the default editor
 if [ `command -v code` ]; then
@@ -65,25 +28,3 @@ elif [ `command -v mvim` ]; then
 elif [ `command -v gvim` ]; then
 	export EDITOR=gvim
 fi
-
-# Setup the prompt
-__scm_ps1() {
-	local s=
-	if (svn info &> /dev/null); then
-		s=" ($(__svn_ps1))"
-	else
-		# Replace the standard git-core indicators
-		s=$(replace_git_ps1_indicators "$(__git_ps1 ' (%s)')")
-	fi
-	echo -n "$s"
-}
-
-PS1=$(echo ${PS1%\\$ })'\[\033[1;31m\]$(__scm_ps1)\[\033[0m\]$ '
-
-# Prefer locally installed node modules
-PATH=./node_modules/.bin:$PATH
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export JAVA_HOME=$(/usr/libexec/java_home)

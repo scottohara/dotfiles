@@ -6,7 +6,7 @@ function make_link() {
 	local valid_choice="N" 
 
 	# Check if the target already exists
-	if [ -e $target_file ]; then
+	if [ -e "$target_file" ]; then
 		until [ $valid_choice = "Y" ]; do
 			# Prompt the user to replace
 			read -p "$target_file already exists. Replace with symlink to $source_file? (y)es, (n)o or (a)bort [enter = no]: " replace_target
@@ -36,7 +36,7 @@ function make_link() {
 
 	# Create the symlink
 	echo "Linking $source_file -> $target_file"
-	ln -s $source_file $target_file
+	ln -s "$source_file" "$target_file"
 }
 
 # Default mode is to install (i), unless -u option passed
@@ -85,10 +85,12 @@ if [ $MODE = "i" ]; then
 	done
 
 	# Special case symlink for vscode files
-	if [ -d ~/Library/Application\ Support/Code/User ]; then
-		ln -s $SCRIPT_DIR/vscode/projects.json ~/Library/Application\ Support/Code/User/projects.json
-		ln -s $SCRIPT_DIR/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-		ln -s $SCRIPT_DIR/vscode/snippets ~/Library/Application\ Support/Code/User/snippets
+	VSCODE_DIR="~/Library/Application\ Support/Code/User"
+	eval VSCODE_DIR="$VSCODE_DIR"		# expand to full path
+	if [ -d "$VSCODE_DIR" ]; then
+		make_link $SCRIPT_DIR/vscode/projects.json "$VSCODE_DIR/projects.json"
+		make_link $SCRIPT_DIR/vscode/settings.json "$VSCODE_DIR/settings.json"
+		make_link $SCRIPT_DIR/vscode/snippets "$VSCODE_DIR/snippets"
 	fi
 
 	# Copy all {name}.launchagent files in topics to ~/Library/LaunchAgents/{name}.plist

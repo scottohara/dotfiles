@@ -1,1 +1,2 @@
 alias server='python -m SimpleHTTPServer'
+alias server3='python -m http.server'

@@ -1,0 +1,22 @@
+##############################################################
+# This file contains machine-agnostic, zsh specific settings #
+##############################################################
+
+# Source the machine-agnostic, shell-agnostic settings
+PROFILE=~/.profile
+if [ -f $PROFILE ]; then
+	source $PROFILE
+fi
+
+# Source the machine-agnostic, shell-specific settings for .dotfiles topics
+if [ -d ~/.dotfiles ]; then
+	for source_file in ~/.dotfiles/**/*.zsh; do
+		source $source_file
+	done
+fi
+
+# Source the machine-specific, shell-agnostic settings
+LOCALRC=~/.localrc
+if [ -f $LOCALRC ]; then
+	source $LOCALRC
+fi

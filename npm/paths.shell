@@ -1,0 +1,2 @@
+# Prefer locally installed node modules
+export PATH=./node_modules/.bin:$PATH

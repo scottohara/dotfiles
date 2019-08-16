@@ -1,0 +1,3 @@
+# Initialise rvm
+RVM_SCRIPT="$HOME/.rvm/scripts/rvm"
+[[ -s $RVM_SCRIPT ]] && source $RVM_SCRIPT

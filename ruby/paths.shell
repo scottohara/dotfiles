@@ -1,0 +1,2 @@
+# Ruby binstubs
+export PATH=./bin:$PATH
