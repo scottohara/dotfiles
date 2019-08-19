@@ -4,26 +4,26 @@
 
 # Source the machine-agnostic, shell-agnostic settings
 PROFILE=~/.profile
-if [ -f $PROFILE ]; then
+if [[ -f $PROFILE ]]; then
 	source $PROFILE
 fi
 
 # Source the machine-agnostic, shell-specific settings for .dotfiles topics
-if [ -d ~/.dotfiles ]; then
-	for source_file in ~/.dotfiles/**/*.bash; do
+if [[ -d ~/.dotfiles ]]; then
+	for source_file in $(find ~/.dotfiles/ -name "*.bash" -print); do
 		source $source_file
 	done
 fi
 
 # Source the machine-specific, shell-agnostic settings
 LOCALRC=~/.localrc
-if [ -f $LOCALRC ]; then
+if [[ -f $LOCALRC ]]; then
 	source $LOCALRC
 fi
 
 # Source the machine-specific, shell-specific settings
 BASHRC=~/.bashrc
-if [ -f $BASHRC ]; then
+if [[ -f $BASHRC ]]; then
 	source $BASHRC
 fi
 

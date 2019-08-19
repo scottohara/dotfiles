@@ -1,5 +1,5 @@
 # jenv
-#if [ `command -v jenv` ]; then
+#if [[ `command -v jenv` ]]; then
 #	eval "$(jenv init -)"
 #	export JAVA_HOME=$(jenv prefix)
 #else

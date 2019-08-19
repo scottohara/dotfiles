@@ -3,28 +3,28 @@
 ################################################################
 
 # Source all *.shell files for .dotfiles topics
-if [ -d ~/.dotfiles ]; then
+if [[ -d ~/.dotfiles ]]; then
 	# Init scripts
-	for source_file in ~/.dotfiles/**/init.shell; do
+	for source_file in $(find ~/.dotfiles/ -name "init.shell" -print); do
 		source $source_file
 	done
 
 	# Paths
-	for source_file in ~/.dotfiles/**/paths.shell; do
+	for source_file in $(find ~/.dotfiles/ -name "paths.shell" -print); do
 		source $source_file
 	done
 	
 	# Aliases
-	for source_file in ~/.dotfiles/**/aliases.shell; do
+	for source_file in $(find ~/.dotfiles/ -name "aliases.shell" -print); do
 		source $source_file
 	done
 fi
 
 # Setup the default editor
-if [ `command -v code` ]; then
+if [[ `command -v code` ]]; then
 	export EDITOR=code
-elif [ `command -v mvim` ]; then
+elif [[ `command -v mvim` ]]; then
 	export EDITOR=code
-elif [ `command -v gvim` ]; then
+elif [[ `command -v gvim` ]]; then
 	export EDITOR=gvim
 fi
