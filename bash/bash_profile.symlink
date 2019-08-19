@@ -10,9 +10,16 @@ fi
 
 # Source the machine-agnostic, shell-specific settings for .dotfiles topics
 if [[ -d ~/.dotfiles ]]; then
-	for source_file in $(find ~/.dotfiles/ -name "*.bash" -print); do
+	# Prompt
+	for source_file in $(find ~/.dotfiles/ -name "prompt.bash" -print); do
 		source $source_file
 	done
+
+	# Completions
+	for source_file in $(find ~/.dotfiles/ -name "completion.bash" -print); do
+		source $source_file
+	done
+	
 fi
 
 # Source the machine-specific, shell-agnostic settings
