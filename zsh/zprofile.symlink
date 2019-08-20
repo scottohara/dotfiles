@@ -57,3 +57,30 @@ setopt INC_APPEND_HISTORY
 
 # Share history between all shells
 setopt SHARE_HISTORY
+
+# ----------
+# Completions
+# ----------
+
+# Show menu on <TAB>
+zstyle ':completion:*' menu select
+
+# Tag name as group name
+zstyle ':completion:*' group-name ''
+
+# Format group names
+zstyle ':completion:*' format '%B---- %d%b'
+
+# `shift-tab` to reverse through completions menu
+# http://stackoverflow.com/a/842370
+bindkey '^[[Z' reverse-menu-complete
+
+autoload -U compinit 
+compinit
+
+# -------------------------------
+# Word style: directory delimiter
+# http://stackoverflow.com/a/1438523
+# -------------------------------
+autoload -U select-word-style 
+select-word-style bash
