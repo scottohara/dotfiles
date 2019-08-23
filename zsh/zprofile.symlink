@@ -2,6 +2,9 @@
 # This file contains machine-agnostic, zsh specific settings #
 ##############################################################
 
+# Enable profiling of shell startup time (`zprof`)
+zmodload zsh/zprof
+
 # Source the machine-agnostic, shell-agnostic settings
 PROFILE=~/.profile
 if [[ -f $PROFILE ]]; then

@@ -18,6 +18,11 @@ if [[ -d ~/.dotfiles ]]; then
 	for source_file in $(find ~/.dotfiles/ -name "aliases.shell" -print); do
 		source $source_file
 	done
+	
+	# Completions
+	for source_file in $(find ~/.dotfiles/ -name "completion.shell" -print); do
+		source $source_file
+	done
 fi
 
 # Setup the default editor
