@@ -87,3 +87,10 @@ compinit
 # -------------------------------
 autoload -U select-word-style 
 select-word-style bash
+
+# -------------------------------
+# Git
+# -------------------------------
+
+# Show git stash symbol
+zstyle ':prompt:pure:git:stash' show yes
