@@ -13,7 +13,7 @@ fi
 
 # Source the machine-agnostic, shell-specific settings for .dotfiles topics
 if [[ -d ~/.dotfiles ]]; then
-	for source_file in $(find ~/.dotfiles -name "*.zsh" -print); do
+	for source_file in $(find ~/.dotfiles/ -name "*.zsh" -print); do
 		source $source_file
 	done
 fi
