@@ -2,6 +2,9 @@
 # This file contains machine-agnostic, bash specific settings #
 ###############################################################
 
+# Temporarily suppress any 'No such file or directory' warnings
+shopt -s nullglob
+
 # Source the machine-agnostic, shell-agnostic settings
 PROFILE=~/.profile
 if [[ -f $PROFILE ]]; then
@@ -9,18 +12,13 @@ if [[ -f $PROFILE ]]; then
 fi
 
 # Source the machine-agnostic, shell-specific settings for .dotfiles topics
-if [[ -d ~/.dotfiles ]]; then
-	# Prompt
-	for source_file in $(find ~/.dotfiles/ -name "prompt.bash" -print); do
-		source $source_file
-	done
+for prompt_file in ~/.dotfiles/**/prompt.bash; do
+	source $prompt_file
+done
 
-	# Completions
-	for source_file in $(find ~/.dotfiles/ -name "completion.bash" -print); do
-		source $source_file
-	done
-	
-fi
+for completion_file in ~/.dotfiles/**/completion.bash; do
+	source $completion_file
+done
 
 # Source the machine-specific, shell-agnostic settings
 LOCALRC=~/.localrc
@@ -33,6 +31,9 @@ BASHRC=~/.bashrc
 if [[ -f $BASHRC ]]; then
 	source $BASHRC
 fi
+
+# Restore 'No such file or directory' warnings
+shopt -u nullglob
 
 # Correct any mistyped cd commands
 shopt -s cdspell

@@ -10,6 +10,9 @@
 # Enable profiling of shell startup time (`zprof`)
 zmodload zsh/zprof
 
+# Temporarily suppress any 'No such file or directory' warnings
+setopt null_glob
+
 # Source the machine-agnostic, shell-agnostic settings
 PROFILE=~/.profile
 if [[ -f $PROFILE ]]; then
@@ -17,17 +20,18 @@ if [[ -f $PROFILE ]]; then
 fi
 
 # Source the machine-agnostic, shell-specific settings for .dotfiles topics
-if [[ -d ~/.dotfiles ]]; then
-	for source_file in $(find ~/.dotfiles/ -name "*.zsh" -print); do
-		source $source_file
-	done
-fi
+for source_file in ~/.dotfiles/**/*.zsh; do
+	source $source_file
+done
 
 # Source the machine-specific, shell-agnostic settings
 LOCALRC=~/.localrc
 if [[ -f $LOCALRC ]]; then
 	source $LOCALRC
 fi
+
+# Restore 'No such file or directory' warnings
+unsetopt null_glob
 
 # `fn-delete` (forward delete)
 # http://superuser.com/a/169930/165804

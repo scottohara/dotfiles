@@ -3,27 +3,21 @@
 ################################################################
 
 # Source all *.shell files for .dotfiles topics
-if [[ -d ~/.dotfiles ]]; then
-	# Init scripts
-	for source_file in $(find ~/.dotfiles/ -name "init.shell" -print); do
-		source $source_file
-	done
+for init_file in ~/.dotfiles/**/init.shell; do
+	source $init_file
+done
 
-	# Paths
-	for source_file in $(find ~/.dotfiles/ -name "paths.shell" -print); do
-		source $source_file
-	done
+for paths_file in ~/.dotfiles/**/paths.shell; do
+	source $paths_file
+done
+
+for aliases_file in ~/.dotfiles/**/aliases.shell; do
+	source $aliases_file
+done
 	
-	# Aliases
-	for source_file in $(find ~/.dotfiles/ -name "aliases.shell" -print); do
-		source $source_file
-	done
-	
-	# Completions
-	for source_file in $(find ~/.dotfiles/ -name "completion.shell" -print); do
-		source $source_file
-	done
-fi
+for completion_file in ~/.dotfiles/**/completion.shell; do
+	source $completion_file
+done
 
 # Setup the default editor
 if [[ `command -v code` ]]; then
