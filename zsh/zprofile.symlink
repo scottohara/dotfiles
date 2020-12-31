@@ -2,6 +2,11 @@
 # This file contains machine-agnostic, zsh specific settings #
 ##############################################################
 
+# To enable xtrace debugging, uncomment the next 3 lines (and 2 more at the end)
+#PS4=$'\\\011%D{%s%6.}\011%x\011%I\011%N\011%e\011'
+#exec 3>&2 2>/tmp/zshstart.$$.log
+#setopt xtrace prompt_subst
+
 # Enable profiling of shell startup time (`zprof`)
 zmodload zsh/zprof
 
@@ -94,3 +99,7 @@ select-word-style bash
 
 # Show git stash symbol
 zstyle ':prompt:pure:git:stash' show yes
+
+# To enable xtrace debugging, uncomment the next two lines
+#unsetopt xtrace
+#exec 2>&3 3>&-
