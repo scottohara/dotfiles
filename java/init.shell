@@ -1,7 +1,1 @@
-# jenv
-#if [[ `command -v jenv` ]]; then
-#	eval "$(jenv init -)"
-#	export JAVA_HOME=$(jenv prefix)
-#else
-	export JAVA_HOME=$(/usr/libexec/java_home)
-#fi
+export JAVA_HOME=$(/usr/libexec/java_home)

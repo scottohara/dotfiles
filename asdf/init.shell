@@ -1,0 +1,3 @@
+# Initialise asdf
+ASDF_SCRIPT=/usr/local/opt/asdf/asdf.sh
+[[ -s $ASDF_SCRIPT ]] && source $ASDF_SCRIPT
