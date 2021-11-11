@@ -1,5 +1,5 @@
 # Initialise asdf
-ASDF_SCRIPT=/usr/local/opt/asdf/asdf.sh
+ASDF_SCRIPT=/opt/homebrew/opt/asdf/libexec/asdf.sh
 [[ -s $ASDF_SCRIPT ]] && source $ASDF_SCRIPT
 
 # Build ruby using Homebrew openssl (instead of rebuilding openssl@1.1 every time)

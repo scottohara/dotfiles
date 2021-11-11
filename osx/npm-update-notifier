@@ -6,9 +6,9 @@
 # Requires: terminal-notifier. Install with:
 #   gem install terminal-notifier
 
-NODE_EXEC='/usr/local/bin/node'
-NPM_EXEC='/usr/local/bin/npm'
-TERMINAL_NOTIFIER='/usr/local/bin/terminal-notifier'
+NODE_EXEC='~/.asdf/shims/node'
+NPM_EXEC='~/.asdf/shims/npm'
+TERMINAL_NOTIFIER='/opt/homebrew/bin/terminal-notifier'
 NOTIF_ARGS="-activate com.apple.Terminal"
 
 outdated=`$NODE_EXEC $NPM_EXEC outdated --global --depth=0 | sed 1d | awk '{ print $1 }'`

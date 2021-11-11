@@ -6,9 +6,9 @@
 # Requires: terminal-notifier. Install with:
 #   gem install terminal-notifier
 
-BREW_EXEC='/usr/local/bin/brew'
+BREW_EXEC='/opt/homebrew/bin/brew'
 #TERMINAL_NOTIFIER=$(which terminal-notifier)
-TERMINAL_NOTIFIER='/usr/local/bin/terminal-notifier'
+TERMINAL_NOTIFIER='/opt/homebrew/bin/terminal-notifier'
 NOTIF_ARGS="-activate com.apple.Terminal -contentImage https://brew.sh/img/homebrew-256x256.png"
 
 $BREW_EXEC update 2>&1 > /dev/null

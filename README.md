@@ -38,9 +38,8 @@ Setting up a new Mac
 1. Install [Homebrew](http://mxcl.github.com/homebrew/)
 2. Install Git (`brew install git`)
 4. Install [VSCode](https://code.visualstudio.com/Download)
-5. Edit `/etc/paths`; move `/usr/local/bin` to top (ie. prefer Homebrew installed versions over default system versions; eg. Git)
-6. Import Solarized profiles into Terminal.app; set as startup settings; change font to Menlo; drop opacity to 95%; increase window size to at least 250x75; change Bright Black text colour from rbg(0,43,54) to rgb(0,44,54)
-7. In Settings => Users & Groups, unlock and right-click user account and choose Advanced Options...; set the login shell as desired (/bin/bash or /bin/zsh)
+5. Import Solarized profiles into Terminal.app; set as startup settings; change font to Menlo; drop opacity to 95%; increase window size to at least 250x75; change Bright Black text colour from rbg(0,43,54) to rgb(0,44,54)
+6. In Settings => Users & Groups, unlock and right-click user account and choose Advanced Options...; set the login shell as desired (/bin/bash or /bin/zsh)
 
 Thanks
 ======

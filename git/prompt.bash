@@ -1,5 +1,5 @@
 # Built-in git prompt
-GIT_PROMPT=/usr/local/etc/bash_completion.d/git-prompt.sh
+GIT_PROMPT=/opt/homebrew/etc/bash_completion.d/git-prompt.sh
 if [ -f $GIT_PROMPT ]; then
 	source $GIT_PROMPT
 fi
