@@ -93,6 +93,13 @@ if [ $MODE = "i" ]; then
 		make_link $SCRIPT_DIR/vscode/snippets "$VSCODE_DIR/snippets"
 	fi
 
+	# Special case symlink for Maven settings
+	M2_DIR="~/.m2"
+	eval M2_DIR="$M2_DIR"		# expand to full path
+	if [ -d "$M2_DIR" ]; then
+		make_link $SCRIPT_DIR/maven/settings.xml "$M2_DIR/settings.xml"
+	fi
+
 	# Copy all {name}.launchagent files in topics to ~/Library/LaunchAgents/{name}.plist
 	for launchagent_file in $SCRIPT_DIR/**/*.launchagent
 	do
