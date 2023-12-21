@@ -3,90 +3,12 @@
 		"name": "AOL",
 		"rootPath": "$home/Subversion/AOL",
 		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "loot",
-		"rootPath": "$home/GitHub/loot",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "tvmanager",
-		"rootPath": "$home/GitHub/tvmanager",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "confluence-open-api-server",
-		"rootPath": "$home/Bitbucket/confluence-open-api-server",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "confluence-open-api-connect",
-		"rootPath": "$home/Bitbucket/confluence-open-api-connect",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "confluence-sequence-diagrams-server",
-		"rootPath": "$home/Bitbucket/confluence-sequence-diagrams-server",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "confluence-sequence-diagrams-connect",
-		"rootPath": "$home/Bitbucket/confluence-sequence-diagrams-connect",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "jira-sequence-diagrams-server",
-		"rootPath": "$home/Bitbucket/jira-sequence-diagrams-server",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "jira-sequence-diagrams-connect",
-		"rootPath": "$home/Bitbucket/jira-sequence-diagrams-connect",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "oharagroup.bitbucket.org",
-		"rootPath": "$home/Bitbucket/oharagroup.bitbucket.org",
-		"paths": [],
-		"group": ""
+		"group": "NextGen"
 	},
 	{
 		"name": "LIBNGW",
 		"rootPath": "$home/Subversion/LIBNGW",
 		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "dotfiles",
-		"rootPath": "$home/GitHub/dotfiles",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "rubocop-config-oharagroup",
-		"rootPath": "$home/GitHub/rubocop-config-oharagroup",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "eslint-config-oharagroup",
-		"rootPath": "$home/GitHub/eslint-config-oharagroup",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "atlassian-marketplace-dashboard",
-		"rootPath": "$home/GitHub/atlassian-marketplace-dashboard",
-		"paths": [],
-		"group": ""
+		"group": "NextGen"
 	}
 ]
