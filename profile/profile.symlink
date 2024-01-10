@@ -21,9 +21,11 @@ done
 
 # Setup the default editor
 if [[ `command -v code` ]]; then
-	export EDITOR=code
+	export EDITOR="code --wait"
+	export VISUAL="code --wait"
 elif [[ `command -v mvim` ]]; then
-	export EDITOR=code
+	export EDITOR="code --wait"
+	export VISUAL="code --wait"
 elif [[ `command -v gvim` ]]; then
 	export EDITOR=gvim
 fi
