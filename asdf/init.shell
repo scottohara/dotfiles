@@ -2,6 +2,6 @@
 ASDF_SCRIPT=/opt/homebrew/opt/asdf/libexec/asdf.sh
 [[ -s $ASDF_SCRIPT ]] && source $ASDF_SCRIPT
 
-# Build ruby using Homebrew openssl (instead of rebuilding openssl@1.1 every time)
-# Assumption is that asdf itself was installed using Homebrew, so we expect openssl@1.1 is also present.
-[[ -s $ASDF_SCRIPT ]] && export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(/opt/homebrew/bin/brew --prefix openssl@1.1)"
+# Build ruby using Homebrew openssl (instead of rebuilding openssl every time)
+# Assumption is that asdf itself was installed using Homebrew, so we expect openssl is also present.
+[[ -s $ASDF_SCRIPT ]] && export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(/opt/homebrew/bin/brew --prefix openssl)"
