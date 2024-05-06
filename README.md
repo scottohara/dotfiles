@@ -39,7 +39,7 @@ Within each topic:
 1. Install [Homebrew](http://mxcl.github.com/homebrew/)
 2. Install Git (`brew install git`)
 3. Install [VSCode](https://code.visualstudio.com/Download)
-4. Import Solarized profiles into Terminal.app; set as startup settings; change font to Monaspace Neon Medium 11 (the non-Var version); drop opacity to 95%; increase window size to at least 250x75; change Bright Black text colour from rbg(0,43,54) to rgb(0,44,54)
+4. Import Solarized profiles into Terminal.app; set as startup settings; change font to Monaspace Neon Var Medium 11; drop opacity to 95%; increase window size to at least 250x75; change Bright Black text colour from rbg(0,43,54) to rgb(0,44,54)
 5. In Settings => Users & Groups, unlock and right-click user account and choose Advanced Options...; set the login shell as desired (/bin/bash or /bin/zsh)
 
 # Thanks

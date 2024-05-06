@@ -2,7 +2,7 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'Monaspace Neon', 'Operator Mono', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
   "editor.fontSize": 13,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
