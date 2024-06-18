@@ -1,1 +1,1 @@
-source <(op completion bash)
+source <(/opt/homebrew/bin/op completion bash)
