@@ -1,0 +1,1 @@
+eval "$(/opt/homebrew/bin/op completion zsh)"

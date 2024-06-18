@@ -20,7 +20,7 @@ if [[ -f $PROFILE ]]; then
 fi
 
 # Source the machine-agnostic, shell-specific settings for .dotfiles topics
-for source_file in ~/.dotfiles/**/*.zsh; do
+for source_file in ~/.dotfiles/**/settings.zsh; do
 	source $source_file
 done
 
@@ -89,6 +89,10 @@ bindkey '^[[Z' reverse-menu-complete
 
 autoload -U compinit 
 compinit
+
+for source_file in ~/.dotfiles/**/completion.zsh; do
+	source $source_file
+done
 
 # -------------------------------
 # Word style: directory delimiter
