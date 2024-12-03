@@ -1,3 +1,4 @@
 *~
+ssh/ssh.symlink/known_hosts*
 vim/vim.symlink/bundle/*
 vim/vim.symlink/after/*
