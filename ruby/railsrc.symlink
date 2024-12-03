@@ -9,3 +9,6 @@
 --skip-action-cable
 --skip-test
 --skip-docker
+--skip-kamal
+--skip-rubocop
+--skip-ci
