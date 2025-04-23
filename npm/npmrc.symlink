@@ -1,5 +1,5 @@
 init-author-name=Scott O'Hara
 init-author-email=scott@oharagroup.net
-init-licence=MIT
+init-license=MIT
 save-exact=true
 //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}
