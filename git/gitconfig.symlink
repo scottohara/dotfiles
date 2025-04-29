@@ -42,7 +42,7 @@
 [help]
 	autocorrect = prompt
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -63,3 +63,5 @@
 	email = scott@oharagroup.net
 	name = Scott O'Hara
 	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQChrvE16ZhFuVIQftclAqEUg/UkduJmtm+3qM1SXG4WI1BOni680b6diMB2krt4mNSBH6Hm50D4hw0AO905+9IgPTQeW6G0ZGUM7MkIQ7A3TPmvoh03R9tdftag42wuAjHLc/8x4KabBvatqkkRAelHuq20gzI+geulgEHy67H3XCRd2NIRW882FTXvXC09VAQF0CX8gPCrtMlkuFxOpEzlC8ClcD+LIEH2VWHC3UXm325AGkYWxt52A+TVldM1Nj4Ld+o0B4eGfXbNXWlJr1NMvlzfiyn64b/B4BA97gT4MWXD6pIfn/VfmdykamkSMmmRX7L8RpLwq5/J/YLuXsCVM/ugrRU6N7B3poqz13LFU3fWPg38/3FwyLXZY1SsDqlMHXp22ncSv8jxNEZnqbKpfaL05+jitTAM8VcTpwV8Ssip6ObEOxEYI967J1jJ4f1Dd+i1wC7u7Q+Ip3ST+GRBfB8nMk16Nvt/TVmkhDQarKMoybfGicJQ8sMxYEmcbaeYZC9/38dPZQo/sWtTBnKtPNJ6y2i7f10oE9MtseuFSZfl5P0Xt7S1JuUXl6xcbXT5aB+5nmt8pf4jH6BLXnNSkkUO27lcmAYRex43Ww6s4WjMLAvTrSgwHp55uMcHSnlMv0ibltBOvJORsm3uNpNBoiIMH+AucfTfRjKoCANBbQ==
+[includeIf "gitdir:~/GitHub/frollous/"]
+	path = ~/GitHub/frollous/.gitconfig

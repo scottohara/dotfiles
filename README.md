@@ -21,8 +21,8 @@ Within each topic:
 - All `*.symlink` files (and directories) will be symlinked to `~/.{file}` eg.
 
 ```
-~/.mystuff			 -> ~/.dotfiles/mystuff/mystuff.symlink
-~/.myotherstuff	 -> ~/.dotfiles/myotherstuff/myotherstuff.symlink
+~/.mystuff       -> ~/.dotfiles/mystuff/mystuff.symlink
+~/.myotherstuff  -> ~/.dotfiles/myotherstuff/myotherstuff.symlink
 ```
 
 # Installation

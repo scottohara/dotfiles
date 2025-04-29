@@ -10,7 +10,6 @@
   "editor.guides.bracketPairs": "active",
   "editor.insertSpaces": false,
   "editor.smoothScrolling": true,
-  "editor.stickyScroll.enabled": true,
   "editor.tabSize": 2,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "svelte"],
   "files.exclude": {
@@ -56,7 +55,34 @@
     "/Users/scotto/Stash/definedbystreamline",
     "/Users/scotto/BitBucket/jira-sequence-diagrams-connect",
     "/Users/scotto/BitBucket/confluence-sequence-diagrams-connect",
-    "/Users/scotto/Hacking/2023-js-bundling-poc"
+    "/Users/scotto/Hacking/2023-js-bundling-poc",
+    "/Users/scotto/GitHub/wtr-webpack-plugin",
+    "/Users/scotto/GitHub/oharagroup/jira-sequence-diagrams-server",
+    "/Users/scotto/GitHub/oharagroup/confluence-sequence-diagrams-server",
+    "/Users/scotto/GitHub/oharagroup/confluence-open-api-server",
+    "/Users/scotto/Stash/applyonlinewebinars",
+    "/Users/scotto/Stash/data-dictionary",
+    "/Users/scotto/GitHub/dc-app-performance-toolkit",
+    "/Users/scotto/Hacking/eslint-schema-diff",
+    "/Users/scotto/GitHub/oharagroup/confluence-open-api-connect",
+    "/Users/scotto/Hacking/eslint-globals-test",
+    "/Users/scotto/Hacking/eslint-svelte-typescript-test",
+    "/Users/scotto/GitHub/oharagroup/confluence-sequence-diagrams-connect",
+    "/Users/scotto/GitHub/oharagroup/jira-sequence-diagrams-connect",
+    "/Users/scotto/GitHub/dotfiles",
+    "/Users/scotto/GitHub/rubocop-config-oharagroup",
+    "/Users/scotto/GitHub/frollous/financial-passport-frontend",
+    "/Users/scotto/GitHub/frollous/advisor-portal-frontend",
+    "/Users/scotto/GitHub/config-inspector",
+    "/Users/scotto/GitHub/frollous/frollo-web-sdk",
+    "/Users/scotto/GitHub/oharagroup/confluence-open-api-forge",
+    "/Users/scotto/GitLab/confluence-open-api-test",
+    "/Users/scotto/Hacking/svelte5-withsentryconfig-bug",
+    "/Users/scotto/GitHub/frollous/frollo-web-ui",
+    "/Users/scotto/GitHub/frollous/cdr-gateway-frontend",
+    "/Users/scotto/GitHub/frollous/finance-web",
+    "/Users/scotto/Stash/ng-jira-rest",
+    "/Users/scotto/GitHub/frollous/advisor-portal-fusionauth-theme"
   ],
   "snyk.yesWelcomeNotification": false,
   "sqltools.connections": [],
@@ -67,6 +93,16 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.nativeTabs": true,
   "workbench.colorTheme": "Solarized Dark",
-  "workbench.editor.enablePreview": false,
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "snyk.folderConfigs": [
+    {
+      "folderPath": "/Users/scotto/GitHub/dotfiles",
+      "baseBranch": "main",
+      "localBranches": ["main"]
+    }
+  ],
+  "editor.fontVariations": false,
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+  "workbench.editor.enablePreview": false
 }
