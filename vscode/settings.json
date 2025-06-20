@@ -82,7 +82,13 @@
     "/Users/scotto/GitHub/frollous/cdr-gateway-frontend",
     "/Users/scotto/GitHub/frollous/finance-web",
     "/Users/scotto/Stash/ng-jira-rest",
-    "/Users/scotto/GitHub/frollous/advisor-portal-fusionauth-theme"
+    "/Users/scotto/GitHub/frollous/advisor-portal-fusionauth-theme",
+    "/Users/scotto/GitHub/frollous/frollo-fusionauth-themes",
+    "/Users/scotto/GitHub/ios-webmanifest-test",
+    "/Users/scotto/GitHub/atlassian-marketplace-proxy",
+    "/Users/scotto/GitHub/atlassian-marketplace-dashboard",
+    "/Users/scotto/Hacking/ECOHELP-68604-jira-refresh-issue-bug",
+    "/Users/scotto/GitHub/frollous/frollo-terraform"
   ],
   "snyk.yesWelcomeNotification": false,
   "sqltools.connections": [],
@@ -98,11 +104,129 @@
   "snyk.folderConfigs": [
     {
       "folderPath": "/Users/scotto/GitHub/dotfiles",
-      "baseBranch": "main",
+      "baseBranch": "master",
       "localBranches": ["main"]
     }
   ],
   "editor.fontVariations": false,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "pgsql.serverGroups": [
+    {
+      "id": "9DFD820E-058F-464E-95B3-618ED1CEFD3A",
+      "name": "Local",
+      "description": ""
+    },
+    {
+      "id": "D8330ABF-780D-450E-A625-29D88B8F9E6D",
+      "name": "Fly.io",
+      "description": ""
+    },
+    {
+      "id": "AA88BFFB-1A8D-4C15-B2BD-33273E648CA1",
+      "name": "Heroku",
+      "description": ""
+    }
+  ],
+  "pgsql.connections": [
+    {
+      "id": "1B90FDCD-6200-4148-942F-36BAC50F0D7C",
+      "groupId": "9DFD820E-058F-464E-95B3-618ED1CEFD3A",
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 15,
+      "applicationName": "vscode-pgsql",
+      "clientEncoding": "utf8",
+      "sslmode": "prefer",
+      "server": "localhost",
+      "user": "scotto",
+      "password": "",
+      "database": "",
+      "profileName": "Local",
+      "port": "5432",
+      "emptyPasswordInput": true,
+      "displayName": "Loot (dev)",
+      "expiresOn": 0
+    },
+    {
+      "id": "514B8A78-82BC-4F57-840B-A1007DE4D433",
+      "groupId": "D8330ABF-780D-450E-A625-29D88B8F9E6D",
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 15,
+      "applicationName": "vscode-pgsql",
+      "clientEncoding": "utf8",
+      "sslmode": "prefer",
+      "server": "lootpg",
+      "user": "postgres",
+      "password": "",
+      "savePassword": true,
+      "database": "",
+      "profileName": "Loot",
+      "port": "15432",
+      "hostaddr": "0.0.0.0",
+      "displayName": "Loot",
+      "expiresOn": 0
+    },
+    {
+      "id": "057575AD-3EE6-447B-A3AD-96BCBD69FD5D",
+      "groupId": "D8330ABF-780D-450E-A625-29D88B8F9E6D",
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 15,
+      "applicationName": "vscode-pgsql",
+      "clientEncoding": "utf8",
+      "sslmode": "prefer",
+      "server": "tvmanagerpg",
+      "user": "postgres",
+      "password": "",
+      "profileName": "TV Manager",
+      "port": "15432",
+      "hostaddr": "0.0.0.0",
+      "database": "",
+      "displayName": "TV Manager",
+      "savePassword": true,
+      "expiresOn": 0
+    },
+    {
+      "id": "3C168AA2-69D9-4CDB-A2EA-C046E720FD68",
+      "groupId": "AA88BFFB-1A8D-4C15-B2BD-33273E648CA1",
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 15,
+      "applicationName": "vscode-pgsql",
+      "clientEncoding": "utf8",
+      "sslmode": "require",
+      "server": "c7t0sffab2p4bc.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com",
+      "user": "ufrqekqm50dfld",
+      "port": "5432",
+      "database": "d69o7689t5seeu",
+      "password": "",
+      "savePassword": true,
+      "profileName": "Staging",
+      "expiresOn": 0
+    },
+    {
+      "id": "01CF53DE-B7AC-49CF-BEE0-61E66EC91E2D",
+      "groupId": "AA88BFFB-1A8D-4C15-B2BD-33273E648CA1",
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 15,
+      "applicationName": "vscode-pgsql",
+      "clientEncoding": "utf8",
+      "sslmode": "require",
+      "server": "c7t0sffab2p4bc.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com",
+      "user": "u8eg8eqdnli1sk",
+      "port": "5432",
+      "database": "d424sl5lhuvh96",
+      "password": "",
+      "savePassword": true,
+      "profileName": "Production",
+      "displayName": "Confluence Open API",
+      "expiresOn": 0
+    }
+  ],
+  "mcp": {
+    "servers": {
+      "github": {
+        "type": "http",
+        "url": "https://api.githubcopilot.com/mcp/"
+      }
+    }
+  }
 }
