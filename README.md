@@ -2,6 +2,8 @@
 
 My personal dotfiles collection.
 
+[![Maintainability](https://qlty.sh/gh/scottohara/projects/dotfiles/maintainability.svg)](https://qlty.sh/gh/scottohara/projects/dotfiles)
+
 # Conventions
 
 Each topic (eg. bash, git, etc.) is in a separate subfolder.
