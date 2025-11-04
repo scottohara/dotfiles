@@ -1,4 +1,5 @@
 # Set default shell to zsh
+
 To set zsh as the default shell for macOS Terminal.app:
 
 1. Settings -> Users & Groups
@@ -7,6 +8,7 @@ To set zsh as the default shell for macOS Terminal.app:
 4. Set Login shell to `/bin/zsh`
 
 # User settings load order
+
 When a login shell is created (e.g. new Terminal window), the following user files are loaded (in this order):
 
 1. `~/.zprofile`
@@ -16,9 +18,10 @@ When a non-login shell is created (e.g. a subshell created with `$(some command)
 
 1. `~/.zshrc`
 
-# User settings descriptions 
+# User settings descriptions
 
 ## `~/.profile`
+
 This file should only contain settings that are:
 
 1. Machine agnostic (shared across all the user's machines)
@@ -36,13 +39,15 @@ fi
 ```
 
 ## `~/.zprofile`
+
 This file should only contain settings that are:
 
 1. Machine agnostic (shared across all the user's machines)
 2. Shell specific (only apply to `zsh`)
 
 ## `./zshrc`
+
 This file should only contain settings that are:
 
-1. Machine specific (only apply to *this* machine)
+1. Machine specific (only apply to _this_ machine)
 2. Shell specific (only apply to `zsh`)
