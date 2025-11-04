@@ -22,7 +22,7 @@ Within each topic:
 - All `*.launchagent` files are copied to `~/Library/LaunchAgents/*.plist`
 - All `*.symlink` files (and directories) will be symlinked to `~/.{file}` eg.
 
-```
+```plaintext
 ~/.mystuff       -> ~/.dotfiles/mystuff/mystuff.symlink
 ~/.myotherstuff  -> ~/.dotfiles/myotherstuff/myotherstuff.symlink
 ```
@@ -47,4 +47,4 @@ Within each topic:
 # Thanks
 
 - Inspiration taken from [Zach Holman](https://github.com/holman/dotfiles)'s dotfiles collection.
-- Also, https://dotfiles.github.com.
+- Also, <https://dotfiles.github.com>.
