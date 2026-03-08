@@ -92,6 +92,12 @@ if [ "$MODE" = "i" ]; then
 		make_link "$symlink_file" "$symlink_basename"
 	done < <(find "$SCRIPT_DIR" -name "*.symlink" -type f)
 
+	# Special case symlink for claude files
+	CLAUDE_DIR="$HOME/.claude"
+	if [ -d "$CLAUDE_DIR" ]; then
+		make_link "$SCRIPT_DIR/claude/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+	fi
+	
 	# Special case symlink for vscode files
 	VSCODE_DIR="$HOME/Library/Application Support/Code/User"
 	if [ -d "$VSCODE_DIR" ]; then
