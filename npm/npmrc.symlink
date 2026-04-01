@@ -1,4 +1,5 @@
 init-author-name=Scott O'Hara
 init-author-email=scott@oharagroup.net
 init-license=MIT
+min-release-age=7
 save-exact=true
