@@ -2,6 +2,3 @@
 	path = vim/vim.symlink/bundle/vundle
 	url = git://github.com/VundleVim/Vundle.vim
 	ignore = untracked
-[submodule "osx/osx-lion-terminal.app-colors-solarized"]
-	path = osx/osx-lion-terminal.app-colors-solarized
-	url = git://github.com/tomislav/osx-lion-terminal.app-colors-solarized.git

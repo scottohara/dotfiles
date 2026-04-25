@@ -21,93 +21,25 @@
     "**/.hg": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.svn": true
+    "**/.svn": true,
   },
   "java.project.importHint": false,
   "projectManager.git.baseFolders": [
     "~/Stash",
     "~/GitHub",
     "~/BitBucket",
-    "~/GitLab"
+    "~/GitLab",
   ],
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "snyk.advanced.cliPath": "/Users/scotto/Library/Application Support/snyk-ls/snyk-macos",
-  "snyk.trustedFolders": [
-    "/Users/scotto/Subversion/AOL",
-    "/Users/scotto/Hacking/web-test-runner",
-    "/Users/scotto/Subversion/LIBNGW",
-    "/Users/scotto/GitHub/loot",
-    "/Users/scotto/GitHub/tvmanager",
-    "/Users/scotto/Hacking/webpack-reload-test",
-    "/Users/scotto/BitBucket/confluence-open-api-server",
-    "/Users/scotto/BitBucket/confluence-sequence-diagrams-server",
-    "/Users/scotto/BitBucket/jira-sequence-diagrams-server",
-    "/Users/scotto/Stash/www-nextgen-net",
-    "/Users/scotto/BitBucket/confluence-open-api-forge",
-    "/Users/scotto/BitBucket/confluence-open-api-connect",
-    "/Users/scotto/GitHub/eslint-config-oharagroup",
-    "/Users/scotto/Stash/launchdarkly-setup",
-    "/Users/scotto/Hacking/cypress-component-test-webpack-issue",
-    "/Users/scotto/Stash/applyonlineupgrade",
-    "/Users/scotto/Hacking/svelte-web-component",
-    "/Users/scotto/Stash/aol-mobile",
-    "/Users/scotto/Stash/definedbystreamline",
-    "/Users/scotto/BitBucket/jira-sequence-diagrams-connect",
-    "/Users/scotto/BitBucket/confluence-sequence-diagrams-connect",
-    "/Users/scotto/Hacking/2023-js-bundling-poc",
-    "/Users/scotto/GitHub/wtr-webpack-plugin",
-    "/Users/scotto/GitHub/oharagroup/jira-sequence-diagrams-server",
-    "/Users/scotto/GitHub/oharagroup/confluence-sequence-diagrams-server",
-    "/Users/scotto/GitHub/oharagroup/confluence-open-api-server",
-    "/Users/scotto/Stash/applyonlinewebinars",
-    "/Users/scotto/Stash/data-dictionary",
-    "/Users/scotto/GitHub/dc-app-performance-toolkit",
-    "/Users/scotto/Hacking/eslint-schema-diff",
-    "/Users/scotto/GitHub/oharagroup/confluence-open-api-connect",
-    "/Users/scotto/Hacking/eslint-globals-test",
-    "/Users/scotto/Hacking/eslint-svelte-typescript-test",
-    "/Users/scotto/GitHub/oharagroup/confluence-sequence-diagrams-connect",
-    "/Users/scotto/GitHub/oharagroup/jira-sequence-diagrams-connect",
-    "/Users/scotto/GitHub/dotfiles",
-    "/Users/scotto/GitHub/rubocop-config-oharagroup",
-    "/Users/scotto/GitHub/frollous/financial-passport-frontend",
-    "/Users/scotto/GitHub/frollous/advisor-portal-frontend",
-    "/Users/scotto/GitHub/config-inspector",
-    "/Users/scotto/GitHub/frollous/frollo-web-sdk",
-    "/Users/scotto/GitHub/oharagroup/confluence-open-api-forge",
-    "/Users/scotto/GitLab/confluence-open-api-test",
-    "/Users/scotto/Hacking/svelte5-withsentryconfig-bug",
-    "/Users/scotto/GitHub/frollous/frollo-web-ui",
-    "/Users/scotto/GitHub/frollous/cdr-gateway-frontend",
-    "/Users/scotto/GitHub/frollous/finance-web",
-    "/Users/scotto/Stash/ng-jira-rest",
-    "/Users/scotto/GitHub/frollous/advisor-portal-fusionauth-theme",
-    "/Users/scotto/GitHub/frollous/frollo-fusionauth-themes",
-    "/Users/scotto/GitHub/ios-webmanifest-test",
-    "/Users/scotto/GitHub/atlassian-marketplace-proxy",
-    "/Users/scotto/GitHub/atlassian-marketplace-dashboard",
-    "/Users/scotto/Hacking/ECOHELP-68604-jira-refresh-issue-bug",
-    "/Users/scotto/GitHub/frollous/frollo-terraform"
-  ],
-  "snyk.yesWelcomeNotification": false,
   "sqltools.connections": [],
   "svelte.enable-ts-plugin": true,
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.scrollback": 10000,
-  "terraform.languageServer.enable": true,
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.nativeTabs": true,
-  "workbench.colorTheme": "Solarized Dark",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.startupEditor": "none",
   "diffEditor.ignoreTrimWhitespace": false,
-  "snyk.folderConfigs": [
-    {
-      "folderPath": "/Users/scotto/GitHub/dotfiles",
-      "baseBranch": "master",
-      "localBranches": ["main"]
-    }
-  ],
   "editor.fontVariations": false,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "workbench.editor.enablePreview": false,
@@ -115,24 +47,24 @@
     {
       "id": "9DFD820E-058F-464E-95B3-618ED1CEFD3A",
       "name": "Local",
-      "description": ""
+      "description": "",
     },
     {
       "id": "D8330ABF-780D-450E-A625-29D88B8F9E6D",
       "name": "Fly.io",
-      "description": ""
+      "description": "",
     },
     {
       "id": "AA88BFFB-1A8D-4C15-B2BD-33273E648CA1",
       "name": "Heroku",
-      "description": ""
-    }
+      "description": "",
+    },
   ],
   "pgsql.connections": [
     {
       "id": "1B90FDCD-6200-4148-942F-36BAC50F0D7C",
       "groupId": "9DFD820E-058F-464E-95B3-618ED1CEFD3A",
-      "authenticationType": "SqlLogin",
+      "authenticationType": "None",
       "connectTimeout": 15,
       "applicationName": "vscode-pgsql",
       "clientEncoding": "utf8",
@@ -145,7 +77,8 @@
       "port": "5432",
       "emptyPasswordInput": true,
       "displayName": "Loot (dev)",
-      "expiresOn": 0
+      "expiresOn": 0,
+      "sshPassword": "",
     },
     {
       "id": "514B8A78-82BC-4F57-840B-A1007DE4D433",
@@ -164,7 +97,8 @@
       "port": "15432",
       "hostaddr": "0.0.0.0",
       "displayName": "Loot",
-      "expiresOn": 0
+      "expiresOn": 0,
+      "sshPassword": "",
     },
     {
       "id": "057575AD-3EE6-447B-A3AD-96BCBD69FD5D",
@@ -183,7 +117,8 @@
       "database": "",
       "displayName": "TV Manager",
       "savePassword": true,
-      "expiresOn": 0
+      "expiresOn": 0,
+      "sshPassword": "",
     },
     {
       "id": "3C168AA2-69D9-4CDB-A2EA-C046E720FD68",
@@ -200,7 +135,8 @@
       "password": "",
       "savePassword": true,
       "profileName": "Staging",
-      "expiresOn": 0
+      "expiresOn": 0,
+      "sshPassword": "",
     },
     {
       "id": "01CF53DE-B7AC-49CF-BEE0-61E66EC91E2D",
@@ -218,15 +154,62 @@
       "savePassword": true,
       "profileName": "Production",
       "displayName": "Confluence Open API",
-      "expiresOn": 0
-    }
+      "expiresOn": 0,
+      "sshPassword": "",
+    },
   ],
-  "mcp": {
-    "servers": {
-      "github": {
-        "type": "http",
-        "url": "https://api.githubcopilot.com/mcp/"
-      }
-    }
-  }
+  "docker.extension.enableComposeLanguageServer": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true,
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "dbcode.tunnels": [
+    {
+      "id": "EtMITrFK6lPUotzO7NklG",
+      "type": "command",
+      "name": "Fly Proxy (lootpg)",
+      "command": "/opt/homebrew/bin/fly",
+      "args": "proxy {localPort}:{remotePort} --app lootpg",
+      "readyPattern": "Tunnel is ready",
+      "readyTimeout": 30000,
+    },
+  ],
+  "dbcode.connections": [
+    {
+      "connectionId": "lSEuUQ9dkvrpXgc_5EgmA",
+      "name": "lootprod",
+      "driver": "postgres",
+      "color": "#00A6FF",
+      "connectionType": "host",
+      "host": "localhost",
+      "port": 5432,
+      "ssl": false,
+      "authMethod": "password",
+      "username": "lootprod",
+      "password": "/opt/homebrew/bin/op read \"op://private/Fly.io Loot Postgres - lootprod/password\"",
+      "savePassword": "cmd",
+      "tunnelId": "EtMITrFK6lPUotzO7NklG",
+      "database": "lootprod",
+      "readOnly": false,
+      "postConnectionSqlType": "inline",
+      "connectionTimeout": 30,
+      "pinnedConnectionTimeout": "0",
+    },
+  ],
+  "dbcode.history.enabled": true,
+  "dbcode.displayDensity": "compact",
+  "dbcode.notebook.maxTabs": 1,
+  "chat.viewSessions.orientation": "stacked",
+  "terminal.integrated.initialHint": false,
+  "workbench.iconTheme": "catppuccin-mocha",
 }

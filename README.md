@@ -41,7 +41,17 @@ Within each topic:
 1. Install [Homebrew](http://mxcl.github.com/homebrew/)
 2. Install Git (`brew install git`)
 3. Install [VSCode](https://code.visualstudio.com/Download)
-4. Import Solarized profiles into Terminal.app; set as startup settings; change font to Monaspace Neon Var Medium 11; drop opacity to 95%; increase window size to at least 250x75; change Bright Black text colour from rbg(0,43,54) to rgb(0,44,54)
+4. Import [Catppuccin Mocha profile](https://github.com/catppuccin/Terminal.app) into Terminal.app
+
+- Set as startup profile
+- Set as default theme
+- Change font to Monaspace Neon Medium 11
+- Set opacity to 95% and blur to 100%
+- Increase window size to at least 250x75 and enable smooth resize
+- Add desired items to title bar
+- Set shell to close the window if exits cleanly
+- Change Bright Black text colour from rbg(0,43,54) to rgb(0,44,54)
+
 5. In Settings => Users & Groups, unlock and right-click user account and choose Advanced Options...; set the login shell as desired (/bin/bash or /bin/zsh)
 
 # Thanks
