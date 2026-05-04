@@ -96,6 +96,7 @@ if [ "$MODE" = "i" ]; then
 	CLAUDE_DIR="$HOME/.claude"
 	if [ -d "$CLAUDE_DIR" ]; then
 		make_link "$SCRIPT_DIR/claude/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+		make_link "$SCRIPT_DIR/claude/settings.json" "$CLAUDE_DIR/settings.json"
 	fi
 	
 	# Special case symlink for vscode files

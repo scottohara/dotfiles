@@ -1,0 +1,17 @@
+{
+  "env": {
+    "ENABLE_LSP_TOOL": "1"
+  },
+  "enabledPlugins": {
+    "ruby-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "allowedTools": [
+    "Bash(grep:*)",
+    "Bash(find:*)",
+    "Bash(ls:*)",
+    "Bash(cat:*)",
+    "Bash(head:*)",
+    "Bash(tail:*)"
+  ]
+}
