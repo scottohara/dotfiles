@@ -6,25 +6,48 @@ My personal dotfiles collection.
 
 # Conventions
 
-Each topic (eg. bash, git, etc.) is in a separate subfolder.
-Within each topic:
+Each topic (eg. `git`, `java`, etc.) is in a separate subfolder.
 
-- All `*.shell` files will be sourced into login shells (in this order)
-  - `init.shell` contains initialisation specific to the topic
-  - `paths.shell` contains paths specific to the topic
-  - `aliases.shell` contains shell aliases specific to the topic
-- All `*.bash` files will be sourced into bash login shells
-  - `completion.bash` contains shell completions specific to the topic
-  - `prompt.bash` contains shell prompt customisations specific to the topic
-- All `*.zsh` files will be sourced into zsh login shells
-  - `completion.zsh` contains shell completions specific to the topic
-  - `prompt.zsh` contains shell prompt customisations specific to the topic
+Files within a topic are loaded according to their extension, which determines both **which
+shells** load them (shell-agnostic, `bash`-only or `zsh`-only) and **which shell
+modes** they apply to (all shells, login shells or interactive shells).
+
+See the [shell topic](shell/README.md) for an explanation of shell modes, and
+the per-shell READMEs ([shell](shell/README.md), [bash](bash/README.md),
+[zsh](zsh/README.md)) for the exact order in which the loader files source these.
+
+`*.shell` files are shell-agnostic and are loaded by both `bash` and `zsh`:
+
+| File               | Applies to         | Contains                                                                              |
+| ------------------ | ------------------ | ------------------------------------------------------------------------------------- |
+| `env.shell`        | all shell modes    | environment variables (must be cheap — no subprocesses)                               |
+| `paths.shell`      | all shell modes    | `PATH` additions (via `prepend_path`; also re-asserted for login shells)              |
+| `init.shell`       | login shells       | topic initialisation, including heavier one-time / forking setup (eg. `brew`, `asdf`) |
+| `completion.shell` | interactive shells | shell-agnostic completions                                                            |
+| `aliases.shell`    | interactive shells | aliases                                                                               |
+
+`*.bash` files are loaded by `bash` interactive shells only:
+
+| File              | Applies to         | Contains              |
+| ----------------- | ------------------ | --------------------- |
+| `completion.bash` | interactive shells | completions           |
+| `prompt.bash`     | interactive shells | prompt customisations |
+
+`*.zsh` files are loaded by `zsh` interactive shells only:
+
+| File             | Applies to         | Contains              |
+| ---------------- | ------------------ | --------------------- |
+| `completion.zsh` | interactive shells | completions           |
+| `prompt.zsh`     | interactive shells | prompt customisations |
+
+Other files:
+
 - All `*.launchagent` files are copied to `~/Library/LaunchAgents/*.plist`
 - All `*.symlink` files (and directories) will be symlinked to `~/.{file}` eg.
 
 ```plaintext
-~/.mystuff       -> ~/.dotfiles/mystuff/mystuff.symlink
-~/.myotherstuff  -> ~/.dotfiles/myotherstuff/myotherstuff.symlink
+~/.foo -> ~/.dotfiles/topic-a/foo.symlink
+~/.bar -> ~/.dotfiles/topic-b/bar.symlink
 ```
 
 # Installation

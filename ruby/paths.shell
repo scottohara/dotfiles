@@ -1,2 +1,2 @@
 # Ruby binstubs
-export PATH=./bin:$PATH
+prepend_path "./bin"

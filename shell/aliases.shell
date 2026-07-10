@@ -1,0 +1,8 @@
+alias server='python3 -m http.server'
+alias pg="postgres -D $HOMEBREW_PREFIX/var/postgres"
+alias redis="redis-server $HOMEBREW_PREFIX/etc/redis.conf"
+
+# Print the response headers for a URL (usage: headercheck <url>)
+headercheck() {
+	curl --silent --dump-header - "$1" --output /dev/null
+}

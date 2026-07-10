@@ -8,7 +8,7 @@
 	<array>
 		<string>bash</string>
 		<string>-c</string>
-		<string>~/.dotfiles/osx/brew-update-notifier</string>
+		<string>~/.dotfiles/macos/brew-update-notifier</string>
 	</array>
 	<key>StartInterval</key>
 	<integer>28800</integer>

@@ -1,1 +1,2 @@
+# Read legacy files (e.g. .ruby-version) in addition to .tool-versions
 legacy_version_file = yes

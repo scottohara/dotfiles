@@ -1,1 +1,1 @@
-source <(/opt/homebrew/bin/op completion bash)
+[[ -x $HOMEBREW_PREFIX/bin/op ]] && eval "$($HOMEBREW_PREFIX/bin/op completion bash)"

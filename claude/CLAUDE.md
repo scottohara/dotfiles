@@ -1,3 +1,7 @@
+# Project context
+
+If an AGENTS.md file exists in the root of the repository, use it where you would normally use CLAUDE.md
+
 # Coding styles
 
 ## Frontend development

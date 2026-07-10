@@ -1,0 +1,2 @@
+# Ensure homebrew is initialised
+[[ -x $HOMEBREW_PREFIX/bin/brew ]] && eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"

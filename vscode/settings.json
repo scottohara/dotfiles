@@ -212,4 +212,6 @@
   "chat.viewSessions.orientation": "stacked",
   "terminal.integrated.initialHint": false,
   "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.browser.openLocalhostLinks": false,
+  "git.blame.editorDecoration.enabled": true,
 }

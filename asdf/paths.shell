@@ -1,1 +1,1 @@
-export PATH=$HOME/.asdf/shims:$PATH
+prepend_path "$HOME/.asdf/shims"

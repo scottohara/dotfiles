@@ -1,3 +1,9 @@
+# Bash
+
+The `bash` topic contains shared bash configuration.
+
+Refer to the [shell topic](../shell/README.md) for more details on shell modes.
+
 # Set default shell to bash
 
 To set bash as the default shell for macOS Terminal.app:
@@ -7,51 +13,69 @@ To set bash as the default shell for macOS Terminal.app:
 3. Right-click your user account and select "Advanced Options..."
 4. Set Login shell to `/bin/bash`
 
-# User settings load order
+# Description of files
 
-When a login shell is created (e.g. new Terminal window), the following user files are loaded (in this order):
+The file names loosely align to the conventions of `zsh` (`.zshenv`, `.zprofile`, `.zshrc`).
 
-1. One of `~/.bash_profile` or `~/.bash_login` or `~/.profile` (in that order, whichever is found first)
-2. `~/.bashrc`
+## `bashenv.symlink` (becomes `~/.bashenv`)
 
-When a non-login shell is created (e.g. a subshell created with `$(some command)`), the following user files are loaded (in this order):
+Configuration needed by ALL four shell modes.
 
-1. `~/.bashrc`
+As this file is loaded for every shell, subshell, script etc., anything in `.bashenv` should be cheap and not fork a subprocess. Otherwise it may cause performance issues.
 
-# User settings descriptions
+Unlike `.zshenv`, bash does not load `.bashenv` automatically for all shells. Instead, we explicitly load it from both `.bash_profile` and `.bashrc` (as well as point `BASH_ENV` at it, for non-login, non-interactive shells), and set the `_BASHENV_ALREADY_SOURCED` variable to avoid double-loading.
 
-## `~/.profile`
+This file loads the following files:
 
-This file should only contain settings that are:
+- `~/.shellenv` (shell-agnostic configuration for all shell modes)
 
-1. Machine agnostic (shared across all the user's machines)
-2. Shell agnostic (apply to `bash`, `zsh` or any other shell)
+## `bash_profile.symlink` (becomes `~/.bash_profile`)
 
-Shell-specific profiles (`~/bash_profile`, `~/.zprofile` etc.) should source this file if it exists, e.g.
+Configuration for login shells.
 
-```bash
-# ~/.bash_profile
+As this file is generally loaded once per session (e.g. opening new `Terminal.app` window or tab), this may include heavier one-time setup items.
 
-PROFILE=~/.profile
-if [ -f $PROFILE ]; then
-	source $PROFILE
-fi
-```
+This file loads the following files:
 
-## `~/.bash_profile`
+- `~/.bashenv` (see above)
+- `~/.bashrc` (see below)
+- `~/.profile` (shell-agnostic settings for login shells)
 
-This file should only contain settings that are:
+## `bashrc.symlink` (becomes `~/.bashrc`)
 
-1. Machine agnostic (shared across all the user's machines)
-2. Shell specific (only apply to `bash`)
+Configuration for interactive shells.
 
-## `./bashrc`
+Things here should be interactive niceties only.
 
-This file should only contain settings that are:
+Good candidates are things like:
 
-1. Machine specific (only apply to _this_ machine)
-2. Shell specific (only apply to `bash`)
+- prompts
+- completions
+- history settings
 
-## `./bash_login`
+This file loads the following files from all other topics:
 
-Not used
+- `prompt.bash` (prompts)
+- `completion.bash` (completions)
+
+This file also loads the following files:
+
+- `~/.bashenv` (see above)
+- `~/.shellrc` (shell-agnostic settings for interactive shells)
+
+# Local configuration
+
+For bash configuration that is:
+
+- machine-specific
+- not intended to be shared
+
+Create a corresponding `*.local` file as per the table below in the home directory of the user.
+
+The above files will load the file if it exists.
+
+| Shared file       |       | Local file                          |
+| ----------------- | ----- | ----------------------------------- |
+| `~/.bashenv`      | loads | `~/.bashenv.local` (if exists)      |
+| `~/.bash_profile` | loads | `~/.bash_profile.local` (if exists) |
+| `~/.bashrc`       | loads | `~/.bashrc.local` (if exists)       |

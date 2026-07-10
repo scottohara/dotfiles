@@ -1,0 +1,1 @@
+[[ -x $HOMEBREW_PREFIX/bin/asdf ]] && eval "$($HOMEBREW_PREFIX/bin/asdf completion bash)"

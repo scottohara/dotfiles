@@ -1,0 +1,33 @@
+######################################################################
+# This file loads shared shell-agnostic settings for all shell modes #
+######################################################################
+
+# Detect the Homebrew prefix (Apple Silicon, Intel or Linuxbrew) so topics can
+# reference $HOMEBREW_PREFIX instead of hardcoding a path. Cheap - no subprocess.
+# The full `brew shellenv` (PATH, MANPATH etc.) still runs later in homebrew/init.shell.
+for _brew in /opt/homebrew /usr/local /home/linuxbrew/.linuxbrew; do
+	[[ -x $_brew/bin/brew ]] && export HOMEBREW_PREFIX=$_brew && break
+done
+unset _brew
+
+# Load environment variables
+for env_file in ~/.dotfiles/*/env.shell; do
+	source $env_file
+done
+
+# Prepend a path to PATH, moving it to the front if already present
+prepend_path() {
+	PATH=":${PATH}:"
+	PATH="${PATH//:$1:/:}"
+	PATH="${1}:${PATH#:}"
+	PATH="${PATH%:}"
+	export PATH
+}
+
+# Load paths
+for paths_file in ~/.dotfiles/*/paths.shell; do
+	source $paths_file
+done
+
+# Load non-shared shell-agnostic settings for all shell modes
+[[ -f ~/.shellenv.local ]] && source ~/.shellenv.local

@@ -1,113 +1,27 @@
-##############################################################
-# This file contains machine-agnostic, zsh specific settings #
-##############################################################
+########################################################
+# This file loads shared zsh settings for login shells #
+########################################################
 
 # To enable xtrace debugging, uncomment the next 3 lines (and 2 more at the end)
 #PS4=$'\\\011%D{%s%6.}\011%x\011%I\011%N\011%e\011'
 #exec 3>&2 2>/tmp/zshstart.$$.log
 #setopt xtrace prompt_subst
 
-# Enable profiling of shell startup time (`zprof`)
-zmodload zsh/zprof
+# To enable profiling of shell startup time (`zprof`), uncomment the next line
+#zmodload zsh/zprof
 
-# Temporarily suppress any 'No such file or directory' warnings
+# Temporarily suppress any errors if nothing matches a glob
 setopt null_glob
 
-# Source the machine-agnostic, shell-agnostic settings
-PROFILE=~/.profile
-if [[ -f $PROFILE ]]; then
-	source $PROFILE
-fi
+# Load shared shell-agnostic settings for login shells
+source ~/.profile
 
-# Source the machine-agnostic, shell-specific settings for .dotfiles topics
-for source_file in ~/.dotfiles/**/settings.zsh; do
-	source $source_file
-done
-
-# Source the machine-specific, shell-agnostic settings
-LOCALRC=~/.localrc
-if [[ -f $LOCALRC ]]; then
-	source $LOCALRC
-fi
-
-# Restore 'No such file or directory' warnings
+# Restore errors if nothing matches a glob
 unsetopt null_glob
-
-# `fn-delete` (forward delete)
-# http://superuser.com/a/169930/165804
-bindkey "^[[3~" delete-char
-
-# -------
-# Prompt
-# -------
-
-autoload -U promptinit
-promptinit
-prompt pure
-
-# -------
-# History
-# -------
-
-# How many entries are read from HISTFILE when shell starts
-export HISTSIZE=100000 
-
-# How many entries are stored in HISTFILE
-export SAVEHIST=$HISTSIZE
-
-# File to store history entries
-export HISTFILE="$HOME/.zsh_history"
-
-# If duplicate history entries exist, only show one
-setopt HIST_FIND_NO_DUPS 
-
-# Delete old entry if new entry is a duplicate
-setopt HIST_IGNORE_ALL_DUPS 
-
-# Write to the history file immediately, not when the shell exits
-setopt INC_APPEND_HISTORY 
-
-# Share history between all shells
-setopt SHARE_HISTORY
-
-# ----------
-# Completions
-# ----------
-
-# Show menu on <TAB>
-zstyle ':completion:*' menu select
-
-# Tag name as group name
-zstyle ':completion:*' group-name ''
-
-# Format group names
-zstyle ':completion:*' format '%B---- %d%b'
-
-# `shift-tab` to reverse through completions menu
-# http://stackoverflow.com/a/842370
-bindkey '^[[Z' reverse-menu-complete
-
-autoload -U compinit 
-compinit
-
-for source_file in ~/.dotfiles/**/completion.zsh; do
-	source $source_file
-done
-
-# -------------------------------
-# Word style: directory delimiter
-# http://stackoverflow.com/a/1438523
-# -------------------------------
-autoload -U select-word-style 
-select-word-style bash
-
-# -------------------------------
-# Git
-# -------------------------------
-
-# Show git stash symbol
-zstyle ':prompt:pure:git:stash' show yes
 
 # To enable xtrace debugging, uncomment the next two lines
 #unsetopt xtrace
 #exec 2>&3 3>&-
+
+# Load non-shared zsh settings for login shells
+[[ -f ~/.zprofile.local ]] && source ~/.zprofile.local

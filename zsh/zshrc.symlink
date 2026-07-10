@@ -1,0 +1,120 @@
+##############################################################
+# This file loads shared zsh settings for interactive shells #
+##############################################################
+
+# `fn-delete` (forward delete)
+# http://superuser.com/a/169930/165804
+bindkey "^[[3~" delete-char
+
+# -------
+# History
+# -------
+
+# How many entries are read from HISTFILE when shell starts
+HISTSIZE=100000
+
+# How many entries are stored in HISTFILE
+SAVEHIST=$HISTSIZE
+
+# File to store history entries
+HISTFILE="$HOME/.zsh_history"
+
+# If duplicate history entries exist, only show one
+setopt HIST_FIND_NO_DUPS
+
+# Delete old entry if new entry is a duplicate
+setopt HIST_IGNORE_ALL_DUPS
+
+# Write to the history file immediately, not when the shell exits
+setopt INC_APPEND_HISTORY
+
+# Share history between all shells
+setopt SHARE_HISTORY
+
+# -------------------------------
+# Word style: directory delimiter
+# http://stackoverflow.com/a/1438523
+# -------------------------------
+autoload -U select-word-style
+select-word-style bash
+
+# -------
+# Prompt
+# -------
+
+autoload -U promptinit
+promptinit
+prompt pure
+
+# Show git stash symbol
+zstyle ':prompt:pure:git:stash' show yes
+
+# Temporarily suppress any errors if nothing matches a glob
+setopt null_glob
+
+# Load prompts
+for prompt_file in ~/.dotfiles/*/prompt.zsh; do
+	source $prompt_file
+done
+
+# ----------
+# Completions
+# ----------
+
+# Show menu on <TAB>
+zstyle ':completion:*' menu select
+
+# Tag name as group name
+zstyle ':completion:*' group-name ''
+
+# Format group names
+zstyle ':completion:*' format '%B---- %d%b'
+
+# `shift-tab` to reverse through completions menu
+# http://stackoverflow.com/a/842370
+bindkey '^[[Z' reverse-menu-complete
+
+autoload -U compinit
+compinit
+
+# Register lazy-loading shims for a command's zsh completion, so the cost of
+# generating it is paid on first use rather than at every shell startup. Fires
+# on either the first run of the command OR the first <TAB> completion of it.
+# Usage: lazy_load_completions <command> [completion-subcommand...]
+#   The subcommand defaults to "completion zsh" (e.g. npm needs just "completion")
+lazy_load_completions() {
+	local cmd=$1
+	shift
+	[[ -n $commands[$cmd] ]] || return
+	local gen="${*:-completion zsh}"
+	local load="_lazyload_$cmd"
+	local tab="${load}_tab"
+
+	# Load the real completion once, tearing down all the lazy scaffolding.
+	functions[$load]="
+		unfunction $cmd $load $tab 2>/dev/null
+		compdef -d $cmd 2>/dev/null
+		source <($cmd $gen)
+	"
+
+	# Trigger on first execution: load, then run the real command.
+	functions[$cmd]="$load; $cmd \"\$@\""
+
+	# Trigger on first completion: load, then re-dispatch to the real completion.
+	functions[$tab]="$load; _normal"
+	compdef "$tab" "$cmd"
+}
+
+# Load completions
+for completion_file in ~/.dotfiles/*/completion.zsh; do
+	source $completion_file
+done
+
+# Load shared shell-agnostic settings for interactive shells
+source ~/.shellrc
+
+# Restore errors if nothing matches a glob
+unsetopt null_glob
+
+# Load non-shared zsh settings for interactive shells
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

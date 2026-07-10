@@ -2,10 +2,16 @@
   "env": {
     "ENABLE_LSP_TOOL": "1"
   },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "opus[1m]",
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true
   },
+  "tui": "fullscreen",
+  "skipAutoPermissionPrompt": true,
   "allowedTools": [
     "Bash(grep:*)",
     "Bash(find:*)",

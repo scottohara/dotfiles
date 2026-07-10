@@ -2,15 +2,15 @@
 	br = branch
 	co = checkout
 	st = status
-[branch]	
+[branch]
 	sort = committerdate
 [color]
 	ui = auto
-[column]	
+[column]
 	ui = auto
 [commit]
 	gpgsign = true
-	verbose = true	
+	verbose = true
 [core]
 	editor = code --wait
 	excludesfile = ~/.gitignore_global
@@ -20,16 +20,16 @@
 	algorithm = histogram
 	colorMoved = plain
 	mnemonicPrefix = true
-	renames = true	
+	renames = true
 	tool = vscode
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [fetch]
 	prune = true
-	all = true	
+	all = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	process = git-lfs filter-process

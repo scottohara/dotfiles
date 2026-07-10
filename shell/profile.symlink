@@ -1,0 +1,22 @@
+###################################################################
+# This file loads shared shell-agnostic settings for login shells #
+###################################################################
+
+# Re-assert paths
+# This is needed because paths are loaded early by .{bash|zsh}env -> .shellenv
+# which is fine for non-login shells; however on macOS both /etc/zprofile and
+# /etc/profile run later and both call path_helper that prepends system paths,
+# meaning that those would take preference over any topic paths
+# All paths.shell files call prepend_path which is idempotent, so if the path
+# is already present it just moves it to the front
+for paths_file in ~/.dotfiles/*/paths.shell; do
+	source $paths_file
+done
+
+# Load initialisations
+for init_file in ~/.dotfiles/*/init.shell; do
+	source $init_file
+done
+
+# Load non-shared shell-agnostic settings for all shell modes
+[[ -f ~/.profile.local ]] && source ~/.profile.local

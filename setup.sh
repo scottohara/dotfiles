@@ -10,7 +10,7 @@ function make_link() {
 	if [ -e "$target_file" ]; then
 		until [ "$valid_choice" = "Y" ]; do
 			# Prompt the user to replace
-			read -rp "$target_file already exists. Replace with symlink to $source_file? (y)es, (n)o or (a)bort [enter = no]: " replace_target
+			read -rp "$target_file already exists. Replace with symlink to $source_file? (y)es, (n)o or (a)bort [enter = no]: " replace_target </dev/tty
 			[ -z "$replace_target" ] && replace_target="N"
 
 			case "$replace_target" in
@@ -40,7 +40,7 @@ function make_link() {
 
 	# Create the symlink
 	echo "Linking $source_file -> $target_file"
-	ln -s "$source_file" "$target_file" || {
+	ln -sfn "$source_file" "$target_file" || {
 		echo "Failed to create symlink from $source_file to $target_file" >&2
 		exit 1
 	}
@@ -81,9 +81,7 @@ if [ "$MODE" = "i" ]; then
 	DOTFILES_DIR="$HOME/.dotfiles"
 
 	# If we're not already in ~/.dotfiles
-	if [ "$SCRIPT_DIR" != "$DOTFILES_DIR" ]; then
-		make_link "$SCRIPT_DIR" "$DOTFILES_DIR"
-	fi
+	[ "$SCRIPT_DIR" != "$DOTFILES_DIR" ] && make_link "$SCRIPT_DIR" "$DOTFILES_DIR"
 	
 	# Symlink all {name}.symlink files in topics to ~/.{name}
 	while IFS= read -r symlink_file; do
@@ -109,17 +107,18 @@ if [ "$MODE" = "i" ]; then
 
 	# Special case symlink for Maven settings
 	M2_DIR="$HOME/.m2"
-	if [ -d "$M2_DIR" ]; then
-		make_link "$SCRIPT_DIR/maven/settings.xml" "$M2_DIR/settings.xml"
-	fi
+	[ -d "$M2_DIR" ] && make_link "$SCRIPT_DIR/maven/settings.xml" "$M2_DIR/settings.xml"
 
 	# Copy all {name}.launchagent files in topics to ~/Library/LaunchAgents/{name}.plist
-	while IFS= read -r launchagent_file; do
-		launchagent_basename="$(basename "$launchagent_file")"
-		launchagent_basename="$HOME/Library/LaunchAgents/${launchagent_basename%.launchagent}.plist"
-		echo "Copying $launchagent_file -> $launchagent_basename"
-		cp "$launchagent_file" "$launchagent_basename"
-	done < <(find "$SCRIPT_DIR" -name "*.launchagent" -type f)
+	if [ "$(uname)" = "Darwin" ]; then
+		mkdir -p "$HOME/Library/LaunchAgents"
+		while IFS= read -r launchagent_file; do
+			launchagent_basename="$(basename "$launchagent_file")"
+			launchagent_basename="$HOME/Library/LaunchAgents/${launchagent_basename%.launchagent}.plist"
+			echo "Copying $launchagent_file -> $launchagent_basename"
+			cp "$launchagent_file" "$launchagent_basename"
+		done < <(find "$SCRIPT_DIR" -name "*.launchagent" -type f)
+	fi
 else
 	# Remove any symlinks to the script directory
 	for symlink_file in "$HOME"/.[!.]* "$HOME"/*; do

@@ -1,0 +1,21 @@
+############################################################
+# This file loads shared bash settings for all shell modes #
+############################################################
+
+# .bashenv is not automatically loaded by bash.
+# To ensure that it loads for all shell modes, both .bash_profile and .bashrc source it.
+# To prevent double-sourcing, this guard exits early if already sourced
+[[ -n $_BASHENV_ALREADY_SOURCED ]] && return
+_BASHENV_ALREADY_SOURCED=1
+
+# Temporarily suppress any errors if nothing matches a glob
+shopt -s nullglob
+
+# Load shared shell-agnostic settings for all shell modes
+source ~/.shellenv
+
+# Restore errors if nothing matches a glob
+shopt -u nullglob
+
+# Load non-shared bash settings for all shell modes
+[[ -f ~/.bashenv.local ]] && source ~/.bashenv.local

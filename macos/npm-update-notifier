@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# Notify of globally installed npm updates via Notification Center on Mac OS X
+#
+# Author: Chris Streeter http://www.chrisstreeter.com
+# Requires: terminal-notifier. Install with:
+#   gem install terminal-notifier
+
+NPM_EXEC="$HOME/.asdf/shims/npm"
+# Nothing to do if npm isn't installed via asdf (also covers asdf being absent)
+[ -x "$NPM_EXEC" ] || exit 0
+# Locate brew (not on PATH under launchd) to derive terminal-notifier's path
+BREW_EXEC="$(command -v brew || echo /opt/homebrew/bin/brew)"
+TERMINAL_NOTIFIER="$("$BREW_EXEC" --prefix 2>/dev/null)/bin/terminal-notifier"
+[ -x "$TERMINAL_NOTIFIER" ] || exit 0
+NOTIF_ARGS="-activate com.apple.Terminal"
+
+outdated=`"$NPM_EXEC" outdated --global --depth=0 | sed 1d | awk '{ print $1 }'`
+
+if [ -z "$outdated" ] ; then
+	# No updates available
+	$TERMINAL_NOTIFIER $NOTIF_ARGS \
+		-title "No NPM Updates Available" \
+		-message "No updates available yet for any npm packages."
+else
+	# We've got an outdated package or two
+	lc=$((`echo "$outdated" | wc -l`))
+	outdated=`echo "$outdated" | tail -$lc`
+	message=`echo "$outdated" | head -5`
+	if [ "$outdated" != "$message" ]; then
+		message="Some of the outdated packages are:
+$message"
+	else
+		message="The following packages are outdated:
+$message"
+	fi
+	# Send to the Notification Center
+	$TERMINAL_NOTIFIER $NOTIF_ARGS \
+		-title "NPM Update(s) Available" \
+		-message "$message"
+fi

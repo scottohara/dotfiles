@@ -1,1 +1,1 @@
-eval "$(/opt/homebrew/bin/op completion zsh)"
+lazy_load_completions op

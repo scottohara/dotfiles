@@ -1,8 +1,6 @@
 # Built-in git prompt
-GIT_PROMPT=/opt/homebrew/etc/bash_completion.d/git-prompt.sh
-if [ -f $GIT_PROMPT ]; then
-	source $GIT_PROMPT
-fi
+GIT_PROMPT=$HOMEBREW_PREFIX/etc/bash_completion.d/git-prompt.sh
+[[ -f "$GIT_PROMPT" ]] && source "$GIT_PROMPT"
 
 # Git prompt
 GIT_PS1_SHOWDIRTYSTATE="y"
@@ -13,7 +11,7 @@ GIT_PS1_SHOWUPSTREAM="verbose"
 
 replace_git_ps1_indicators() {
 	local s=$1
-	
+
 	# Upstream diverged (u+n-n)=> ▶n◀n (\u25B6 & \u25C0)
 	s=$(echo "$s" | sed 's/u+\([0-9]*\)-\([0-9]*\)/\1▶◀\2/')
 

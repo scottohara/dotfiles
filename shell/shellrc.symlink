@@ -1,0 +1,16 @@
+#########################################################################
+# This file loads shared shell-agnostic settings for interactive shells #
+#########################################################################
+
+# Load completions
+for completion_file in ~/.dotfiles/*/completion.shell; do
+	source $completion_file
+done
+
+# Load aliases
+for aliases_file in ~/.dotfiles/*/aliases.shell; do
+	source $aliases_file
+done
+
+# Load non-shared shell-agnostic settings for interactive shells
+[[ -f ~/.shellrc.local ]] && source ~/.shellrc.local

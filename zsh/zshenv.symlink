@@ -1,0 +1,15 @@
+###########################################################
+# This file loads shared zsh settings for all shell modes #
+###########################################################
+
+# Temporarily suppress any errors if nothing matches a glob
+setopt null_glob
+
+# Load shared shell-agnostic settings for all shell modes
+source ~/.shellenv
+
+# Restore errors if nothing matches a glob
+unsetopt null_glob
+
+# Load non-shared zsh settings for all shell modes
+[[ -f ~/.zshenv.local ]] && source ~/.zshenv.local

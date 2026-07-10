@@ -1,5 +1,7 @@
 # SVN prompt
 __svn_ps1() {
-	SVN_ROOT=$(svn info | sed -n 's/Repository\ Root:\ .*\///p')
-	svn info | sed -n "s/Revision: \([0-9]*\).*$/$SVN_ROOT:\1/p"
+	local info root
+	info=$(svn info 2>/dev/null) || return
+	root=$(sed -n 's/Repository\ Root:\ .*\///p' <<< "$info")
+	sed -n "s/Revision: \([0-9]*\).*$/$root:\1/p" <<< "$info"
 }

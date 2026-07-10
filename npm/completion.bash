@@ -1,0 +1,1 @@
+command -v npm >/dev/null 2>&1 && eval "$(npm completion)"

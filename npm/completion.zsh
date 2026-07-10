@@ -1,0 +1,1 @@
+lazy_load_completions npm completion
