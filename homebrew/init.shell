@@ -1,2 +1,10 @@
 # Ensure homebrew is initialised
-[[ -x $HOMEBREW_PREFIX/bin/brew ]] && eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+if [[ -x $HOMEBREW_PREFIX/bin/brew ]]; then
+	eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
+
+	# `brew shellenv` prepends to PATH directly rather than going through
+	# prepend_path, so it re-adds entries that homebrew/paths.shell already placed.
+	# Re-prepend them here (prepend_path is idempotent) to collapse the duplicates.
+	prepend_path "$HOMEBREW_PREFIX/sbin"
+	prepend_path "$HOMEBREW_PREFIX/bin"
+fi

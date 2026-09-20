@@ -1,0 +1,5 @@
+# Any homebrew-installed command invoked by its name only needs homebrew's bin/sbin
+# in the PATH so that they can be found, even in non-login/non-interactive shells.
+# `brew shellenv` remains in init.shell as it forks a subprocess and is not cheap.
+prepend_path "$HOMEBREW_PREFIX/sbin"
+prepend_path "$HOMEBREW_PREFIX/bin"
