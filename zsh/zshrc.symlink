@@ -49,6 +49,15 @@ prompt pure
 # Show git stash symbol
 zstyle ':prompt:pure:git:stash' show yes
 
+# Show detailed dirty indicators
+zstyle ':prompt:pure:git:dirty' detailed yes
+
+# Show node version
+zstyle ':prompt:pure:environment:node_version' show yes
+
+# Dim path separators
+zstyle ':prompt:pure:path:separator' dim yes
+
 # Temporarily suppress any errors if nothing matches a glob
 setopt null_glob
 
